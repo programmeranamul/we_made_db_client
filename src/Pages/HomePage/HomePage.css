@@ -1,0 +1,80 @@
+.logo {
+  object-fit: contain;
+  height: 68px;
+}
+.menu {
+  font-weight: 600 !important;
+  color: black !important;
+}
+.banner-bg {
+  width: 280px;
+  position: absolute;
+  right: 0;
+}
+.banner-container {
+  position: relative;
+  min-height: 75vh;
+  /* //background-color: aqua; */
+  background: url("../../Images/steven-ungermann-pj3BqHOJylY-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.banner-container::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 0;
+}
+.banner-text {
+  letter-spacing: 3.3;
+  font-size: 40px !important;
+  z-index: 111;
+}
+.wrapper {
+  z-index: 1;
+}
+
+.after-title {
+  position: relative;
+}
+.after-title::after {
+  position: absolute;
+  content: "";
+  width: 20%;
+  height: 3px;
+  background-color: black;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+}
+
+.buyer {
+  width: 150px;
+}
+.buyer-count {
+  width: 80px;
+  margin: auto;
+  height: 80px;
+  text-align: center;
+  border: 2.5px solid;
+  border-radius: 50%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-link {
+  text-decoration: none;
+  
+}
+.footer-link:hover {
+  color: black !important;
+  text-decoration: none;
+}
+.footer{
+    background-color: #417ce2;
+}

@@ -1,0 +1,18 @@
+.about-us {
+  clip-path: polygon(0 0, 100% 0%, 100% 80%, 0 96%);
+  background: url("../../Images/dane-deaner-qRfMB-IOQjE-unsplash.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 600px;
+  position: relative;
+  width: 100%;
+}
+
+.about-us::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+  }

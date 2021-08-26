@@ -1,0 +1,32 @@
+.benifite-member {
+  clip-path: polygon(0 0, 100% 0%, 100% 80%, 0 96%);
+  background: url("../../Images/dane-deaner-qRfMB-IOQjE-unsplash.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 600px;
+  position: relative;
+  width: 100%;
+}
+
+.benifite-member::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+.after-dis-title {
+  position: relative;
+}
+.after-dis-title::after {
+  position: absolute;
+  content: "";
+  width: 20%;
+  height: 3px;
+  background-color: black;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+}

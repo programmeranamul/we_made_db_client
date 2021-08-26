@@ -1,0 +1,45 @@
+.bg-sky {
+  background-color: #417ce2;
+}
+.text-sky {
+  color: #417ce2;
+}
+
+.bg-orange {
+  background-color: #feaf1d;
+}
+.text-orange {
+  color: #feaf1d;
+}
+
+.fw-700 {
+  font-weight: 700 !important;
+}
+.fw-600 {
+  font-weight: 600 !important;
+}
+
+/* Font Size */
+.fs-40 {
+  font-size: 40px !important;
+}
+.fs-50 {
+  font-size: 40px !important;
+}
+
+/* z-index */
+.index-1 {
+  z-index: 1;
+}
+.index-0 {
+  z-index: 0;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+
+.mb-135{
+  margin-bottom: 135px !important;
+}

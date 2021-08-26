@@ -1,0 +1,13 @@
+.join-us-title {
+    position: relative;
+  }
+  .join-us-title::after {
+    position: absolute;
+    content: "";
+    width: 20%;
+    height: 3px;
+    background-color: black;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+  }
