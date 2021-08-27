@@ -3,6 +3,7 @@ import {
   logedInConstanse,
   logOutConstanse,
   activateEmail,
+  sellerConstanse,
 } from "./../Constanse";
 
 const buyerInitialState = {
@@ -12,7 +13,7 @@ const buyerInitialState = {
   token: null,
   authenticate: false,
   actMessage: "",
-  buyer: {},
+  user: {},
 };
 
 export const buyerAuthReducer = (state = buyerInitialState, action) => {
@@ -30,7 +31,7 @@ export const buyerAuthReducer = (state = buyerInitialState, action) => {
         authenticate: true,
         token: action.payload.token,
         message: action.payload.message,
-        buyer: action.payload.buyer,
+        user: action.payload.buyer,
       };
     case buyserAuthConstanse.buyerSingUpFail:
       return {
@@ -53,15 +54,38 @@ export const buyerAuthReducer = (state = buyerInitialState, action) => {
         authenticate: true,
         token: action.payload.token,
         message: action.payload.message,
-        buyer: action.payload.buyer,
+        user: action.payload.buyer,
       };
     }
     case logedInConstanse.logedInFail: {
       return {
         ...buyerInitialState,
-        error: action.payload.error,      
+        error: action.payload.error,
       };
     }
+
+    //seller here
+    case sellerConstanse.sellerSingUpRequest: {
+      return { ...buyerInitialState, loading: true };
+    }
+    case sellerConstanse.sellerSingUpSuccess: {
+      return {
+        ...buyerInitialState,
+        authenticate: true,
+        token: action.payload.token,
+        message: action.payload.message,
+        user: action.payload.user,
+      };
+    }
+    case sellerConstanse.sellerSingUpFail: {
+      return {
+        ...buyerInitialState,
+        authenticate: false,
+        error: action.payload.error,
+      };
+    }
+
+    //logout here
     case logOutConstanse.logoutRequest: {
       return { ...state, loading: true };
     }

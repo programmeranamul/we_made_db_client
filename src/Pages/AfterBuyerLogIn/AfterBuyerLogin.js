@@ -60,17 +60,19 @@ const list = [
 ];
 
 const AfterBuyerLogin = () => {
-
-  const history = useHistory()
+  const history = useHistory();
   return (
     <div className="mt-3 mb-5">
       <div className="container">
         <h4>
           No doubt, buying an apartment is a dream. Make sure of check few
-          important issues to consider before buy an apartment or flat.</h4>
+          important issues to consider before buy an apartment or flat.
+        </h4>
         <ul className="ps-5">
           {instracTion.map((item) => (
-            <li className="item">{item}</li>
+            <li className="item" key={item}>
+              {item}
+            </li>
           ))}
         </ul>
 
@@ -101,7 +103,10 @@ const AfterBuyerLogin = () => {
                 </tbody>
               </Table>{" "}
               <div>
-                <button className="btn-sm btn btn-primary mt-3" onClick={() => history.push('/buyer/list')}>
+                <button
+                  className="btn-sm btn btn-primary mt-3"
+                  onClick={() => history.push("/buyer/list")}
+                >
                   Show All
                 </button>
               </div>

@@ -10,6 +10,7 @@ import { Alert } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { applyActivation } from "../../Redux/Actions/BuyerAuthAction";
+import { sellerJoinRequest } from "./../../Redux/Actions/SellerAuthAction";
 
 const JoinNow = () => {
   const history = useHistory();
@@ -37,11 +38,14 @@ const JoinNow = () => {
     if (type === "Buyer") {
       dispatch(applyActivation(data));
     }
+    if (type === "Seller") {
+      dispatch(sellerJoinRequest(data));
+    }
   };
 
-  // if (state.authenticate) {
-  //   history.replace("/buyer/1");
-  // }
+  if (state.authenticate) {
+    history.replace("/buyer/1");
+  }
 
   return (
     <div className="mt-4">
@@ -129,16 +133,20 @@ const JoinNow = () => {
               <div>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                   <Form.Label>Organization (If job holder)</Form.Label>
-                  <Form.Control type="text" placeholder="Organization" />
+                  <Form.Control
+                    type="text"
+                    placeholder="Organization"
+                    {...register("Organization")}
+                  />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                   <Form.Label>Designation</Form.Label>
                   <Form.Control
                     type="text"
                     placeholder="Designation"
-                    {...register("designation", { required: true })}
+                    {...register("Designation", { required: true })}
                   />
-                  {errors.designation?.type === "required" && (
+                  {errors.Designation?.type === "required" && (
                     <span className="text-danger mt-2 d-block">
                       This field is required
                     </span>

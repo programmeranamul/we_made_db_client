@@ -17,7 +17,13 @@ export const logOutConstanse = {
 };
 
 export const activateEmail = {
-  activateEmailRequest:"activateEmailRequest",
-  activateEmailFail:"activateEmailFail",
+  activateEmailRequest: "activateEmailRequest",
+  activateEmailFail: "activateEmailFail",
   activateEmailSuccessConstanse: "activateEmailSuccessConstanse",
+};
+
+export const sellerConstanse = {
+  sellerSingUpRequest: "sellerSingUpRequest",
+  sellerSingUpSuccess: "sellerSingUpSuccess",
+  sellerSingUpFail: "sellerSingUpFail",
 };

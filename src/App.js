@@ -13,13 +13,13 @@ import JoinNow from "./Pages/JoinNowPage/JoinNow";
 import Login from "./Pages/LoginPage/Login";
 import JoinType from "./Pages/JoinNowPage/JoinType";
 import PrivetPage from "./Pages/PrivetPage/PrivetPage";
-import Test from "./Pages/Test";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { ifLogedIN } from "./Redux/Actions/BuyerAuthAction";
 import AfterBuyerLogin from "./Pages/AfterBuyerLogIn/AfterBuyerLogin";
 import AccountActivate from "./Pages/JoinNowPage/AccountActivate";
 import BuyerCompanyListPage from "./Pages/AfterBuyerLogIn/BuyerCompanyListPage";
+import SellerAccountActive from "./Pages/JoinNowPage/SellerAccountActive";
 axios.defaults.withCredentials = true;
 
 function App() {
@@ -62,6 +62,9 @@ function App() {
         </Route>
         <Route path="/account/activate/:token">
           <AccountActivate />
+        </Route>
+        <Route path="/account/seller/activate/:token">
+          <SellerAccountActive />
         </Route>
         <PrivetPage path="/buyer/1">
           <AfterBuyerLogin />

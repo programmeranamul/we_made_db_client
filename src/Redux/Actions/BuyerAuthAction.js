@@ -6,6 +6,9 @@ import {
 } from "./../Constanse";
 import axios from "axios";
 
+
+
+//buyer singup
 export const buyerSingup = (datas) => {
   return async (dispatch) => {
     console.log(datas);
@@ -16,7 +19,7 @@ export const buyerSingup = (datas) => {
         datas
       );
       const { buyer, token, message } = res.data;
-      localStorage.setItem("buyer", JSON.stringify(buyer));
+      localStorage.setItem("user", JSON.stringify(buyer));
       localStorage.setItem("token", token);
       dispatch({
         type: buyserAuthConstanse.buyerSingUpSuccess,
@@ -38,17 +41,8 @@ export const buyerSingup = (datas) => {
   };
 };
 
-// apply for email for singup
-// export const applyActivation = async (data) => {
-//   // return async (dispatch) => {
-//   //   console.log("call");
-//   //   console.log(data);
-//   //   const res = await axios.post("http://localhost:8080/joinin", data);
-//   //   console.log(res);
-//   // };
-//   console.log("object", data);
-// };
 
+//buyer account activation
 export const applyActivation = (data) => {
   return async (dispatch) => {
     dispatch({ type: buyserAuthConstanse.buyerSingupRequest });
@@ -65,21 +59,7 @@ export const applyActivation = (data) => {
           error: e.response.data.error,
         },
       });
-    }
-    //   try {
-    //     const res = await axios.post("http://localhost:8080/joinin", data);
-    //     dispatch({type:activateEmail.activateEmailConstanse, payload:"Active email"})
-    //   } catch (e) {
-    //     dispatch({
-    //       type: buyserAuthConstanse.buyerSingUpFail,
-    //       payload: {
-    //         error: e.response.data.error,
-    //       },
-    //     });
-    //   }
-
-    // };
-    console.log("true");
+    } 
   };
 };
 
@@ -89,8 +69,9 @@ export const login = (datas) => {
     dispatch({ type: logedInConstanse.logedInRequest });
     try {
       const res = await axios.post("https://ancient-dawn-67469.herokuapp.com/login", datas);
+      console.log(res );
       const { buyer, token, message } = res.data;
-      localStorage.setItem("buyer", JSON.stringify(buyer));
+      localStorage.setItem("user", JSON.stringify(buyer));
       localStorage.setItem("token", token);
       dispatch({
         type: logedInConstanse.logedInSuccess,
@@ -104,7 +85,7 @@ export const login = (datas) => {
       dispatch({
         type: logedInConstanse.logedInFail,
         payload: {
-          error: e.response.data.error,
+          error: e.response.data.error || "Fail To LogIn",
         },
       });
     }
@@ -116,7 +97,7 @@ export const ifLogedIN = () => {
   return async (dispatch) => {
     console.log("object logedin");
     const token = localStorage.getItem("token");
-    const buyer = JSON.parse(localStorage.getItem("buyer"));
+    const buyer = JSON.parse(localStorage.getItem("user"));    
 
     if (token && buyer) {
       try {
@@ -141,18 +122,17 @@ export const ifLogedIN = () => {
 };
 
 //logout
-
 export const logOut = () => {
   return async (dispatch) => {
     dispatch({ type: logOutConstanse.logoutRequest });
     try {
       // const res = await axios.post("https://ancient-dawn-67469.herokuapp.com/logout");
       // if (res.status === 200) {
-    localStorage.clear();
+      localStorage.clear();
       //   dispatch({ type: logOutConstanse.logOutSuccess });
       // } else {
       // }
-      dispatch({ type: logOutConstanse.logOutSuccess })
+      dispatch({ type: logOutConstanse.logOutSuccess });
     } catch (e) {
       dispatch({
         type: logOutConstanse.logoutRequest,

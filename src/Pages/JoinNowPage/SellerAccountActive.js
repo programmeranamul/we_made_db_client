@@ -1,35 +1,32 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { buyerSingup } from "./../../Redux/Actions/BuyerAuthAction";
 import { useHistory } from "react-router-dom";
+import { activeSellerAccoutn } from "../../Redux/Actions/SellerAuthAction";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
-const AccountActivate = () => {
+const SellerAccountActive = () => {
   const dispatch = useDispatch();
   let history = useHistory();
   let { token } = useParams();
-  const handelAccoutnActive = () => {
+
+  const userStore = useSelector((state) => state.buyerAuthReducer);
+
+  const handelSellerAccoutnActive = () => {
     const data = { token: token };
-    dispatch(buyerSingup(data));
+    dispatch(activeSellerAccoutn(data));
   };
-  const buyerAutyh = useSelector((state) => state.buyerAuthReducer);
-
-  if (buyerAutyh.authenticate) {
-    history.replace("/buyer/1");
-  }
-
   return (
     <div className="mt-4">
       <div className="container">
         <div className="text-center">
           <button
             className="btn btn-primary mx-auto"
-            onClick={handelAccoutnActive}
+            onClick={handelSellerAccoutnActive}
           >
-            Active account
-            {buyerAutyh.loading && (
+            Active account{" "}
+            {userStore.loading && (
               <FontAwesomeIcon icon={faSpinner} className="fa-spin" />
             )}
           </button>
@@ -39,4 +36,4 @@ const AccountActivate = () => {
   );
 };
 
-export default AccountActivate;
+export default SellerAccountActive;
