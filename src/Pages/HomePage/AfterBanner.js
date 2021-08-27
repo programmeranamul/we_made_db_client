@@ -1,6 +1,6 @@
 import React from "react";
 import image from "../../Images/Broker Free.jpg";
-import key from "../../Images/Buyer Symbol.jpg"
+import key from "../../Images/key.jpg"
 
 const AfterBanner = () => {
   return (

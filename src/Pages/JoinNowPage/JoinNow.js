@@ -44,7 +44,12 @@ const JoinNow = () => {
   };
 
   if (state.authenticate) {
-    history.replace("/buyer/1");
+    if (state.user.type === "Buyer") {
+      history.replace("/buyer/1");
+    }
+    if (state.user.type === "Seller") {
+      history.replace("/seller/1");
+    }
   }
 
   return (
@@ -158,7 +163,7 @@ const JoinNow = () => {
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Password</Form.Label>
               <Form.Control
-                type="text"
+                type="text" type="password"
                 placeholder="Password"
                 {...register("password", { required: true, minLength: 4 })}
               />
@@ -176,7 +181,7 @@ const JoinNow = () => {
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Confirm Password</Form.Label>
               <Form.Control
-                type="text"
+                type="text" type="password"
                 placeholder="Confirm Password"
                 {...register("confarmPassword", {
                   required: true,

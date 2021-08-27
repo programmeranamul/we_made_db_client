@@ -41,7 +41,7 @@ const AfterSellerLoginPage = () => {
             </h5>
             <div className="row">
               {sellerDetails.slice(0, 3).map((item) => (
-                <div className="col-md-4 p-4">
+                <div key={item.name} className="col-md-4 p-4">
                   <div className="card p-4 rounded-9 text-center">
                     <img
                       className="w-75px buyerCardLogo"

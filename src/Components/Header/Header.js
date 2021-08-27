@@ -13,7 +13,6 @@ import { logOut } from "./../../Redux/Actions/BuyerAuthAction";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
-
 const menuItem = [
   {
     text: "About us",
@@ -60,8 +59,29 @@ const Header = () => {
                   {item.text}
                 </Nav.Link>
               ))}
+              {buyerAutyh.authenticate && buyerAutyh.user.type === "Buyer" ? (
+                <Nav.Link
+                  as={Link}
+                  to={"/buyer/1"}
+                  className="menu bg-orange ms-2 rounded mb-3 mb-md-0"
+                >
+                  Buyer
+                </Nav.Link>
+              ) : null}
+              {buyerAutyh.authenticate && buyerAutyh.user.type === "Seller" ? (
+                <Nav.Link
+                  as={Link}
+                  to={"/seller/1"}
+                  className="menu bg-orange ms-2 rounded mb-3 mb-md-0"
+                >
+                  Seller
+                </Nav.Link>
+              ) : null}
               {buyerAutyh.authenticate ? (
-                <Nav.Link onClick={handelLogOut} className="menu bg-orange ms-2 rounded mb-3 mb-md-0">
+                <Nav.Link
+                  onClick={handelLogOut}
+                  className="menu bg-orange ms-2 rounded mb-3 mb-md-0"
+                >
                   Log Out{" "}
                   {buyerAutyh.loading && (
                     <FontAwesomeIcon icon={faSpinner} className="fa-spin" />
@@ -76,7 +96,11 @@ const Header = () => {
                   >
                     Join us
                   </Nav.Link>
-                  <Nav.Link as={Link} to={"/login"} className="menu bg-orange ms-2 rounded mb-3 mb-md-0">
+                  <Nav.Link
+                    as={Link}
+                    to={"/login"}
+                    className="menu bg-orange ms-2 rounded mb-3 mb-md-0"
+                  >
                     Log in
                   </Nav.Link>
                 </>
@@ -90,3 +114,9 @@ const Header = () => {
 };
 
 export default Header;
+
+// safidev96@gmail.com
+// safidev1234
+
+// codershero5@gmail.com
+// C0ders@her0_5$#

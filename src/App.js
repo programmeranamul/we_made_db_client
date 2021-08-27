@@ -22,6 +22,10 @@ import BuyerCompanyListPage from "./Pages/AfterBuyerLogIn/BuyerCompanyListPage";
 import SellerAccountActive from "./Pages/JoinNowPage/SellerAccountActive";
 import AfterSellerLoginPage from './Pages/AfterSellerLogIn/AfterSellerLoginPage';
 import SellerList from "./Pages/AfterSellerLogIn/SellerList";
+import ContactUs from "./Pages/ContactUsPage/ContactUs";
+import Carear from "./Pages/CarearPage/Carear";
+import HowIsItWork from "./Pages/HowIsItWork/HowIsItWork";
+import MemberShipPlan from "./Pages/MemberShipPlan/MemberShipPlan";
 axios.defaults.withCredentials = true;
 
 function App() {
@@ -62,6 +66,19 @@ function App() {
         <Route path="/login">
           <Login />
         </Route>
+        <Route path="/contact-us">
+          <ContactUs />
+        </Route>
+        <Route path="/carrers">
+          <Carear />
+        </Route>
+        <Route path="/how-it-work">
+          <HowIsItWork />
+        </Route>
+        <Route path="/plans">
+          <MemberShipPlan />
+        </Route>
+        
         <Route path="/account/activate/:token">
           <AccountActivate />
         </Route>

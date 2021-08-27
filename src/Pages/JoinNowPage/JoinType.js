@@ -4,13 +4,24 @@ import seller from "../../Images/seller.png";
 import JoinNow from "./JoinNow";
 import "./JoinNow.css";
 import { useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 const JoinType = () => {
   const history = useHistory();
+  const state = useSelector((state) => state.buyerAuthReducer);
 
   const jointype = (type) => {
     history.push(`/join-us/${type}`);
   };
+
+  if (state.authenticate) {
+    if (state.user.type === "Buyer") {
+      history.replace("/buyer/1");
+    }
+    if (state.user.type === "Seller") {
+      history.replace("/seller/1");
+    }
+  }
 
   return (
     <div className="bg-min-light">
@@ -41,7 +52,7 @@ const JoinType = () => {
           >
             <img src={buyer} alt="" className="join-icon me-4" />
             <div>
-              <h4>Join as a Buyer</h4>
+              <h4>Join as a Seller</h4>
               <p>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 Doloribus, optio?

@@ -15,7 +15,7 @@ export const buyerSingup = (datas) => {
     dispatch({ type: buyserAuthConstanse.buyerSingupRequest });
     try {
       const res = await axios.post(
-        "http://localhost:8080/account/active",
+        "https://ancient-dawn-67469.herokuapp.com/account/active",
         datas
       );
       const { buyer, token, message } = res.data;
@@ -47,7 +47,7 @@ export const applyActivation = (data) => {
   return async (dispatch) => {
     dispatch({ type: buyserAuthConstanse.buyerSingupRequest });
     try {
-      const res = await axios.post("http://localhost:8080/joinin", data);
+      const res = await axios.post("https://ancient-dawn-67469.herokuapp.com/joinin", data);
       dispatch({
         type: activateEmail.activateEmailSuccessConstanse,
         payload: "Go to your email and active your account",
@@ -68,7 +68,7 @@ export const login = (datas) => {
   return async (dispatch) => {
     dispatch({ type: logedInConstanse.logedInRequest });
     try {
-      const res = await axios.post("http://localhost:8080/login", datas);
+      const res = await axios.post("https://ancient-dawn-67469.herokuapp.com/login", datas);
       console.log(res );
       const { buyer, token, message } = res.data;
       localStorage.setItem("user", JSON.stringify(buyer));

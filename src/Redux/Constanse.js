@@ -27,3 +27,11 @@ export const sellerConstanse = {
   sellerSingUpSuccess: "sellerSingUpSuccess",
   sellerSingUpFail: "sellerSingUpFail",
 };
+
+
+
+
+//carear constanse
+export const careareConstanse = {
+  
+}

@@ -37,8 +37,8 @@ const footerItems = [
     title: "Support",
     links: [
       {
-        text: "How to get start",
-        path: "/how-to-start",
+        text: "How to get started",
+        path: "/how-to-started",
       },
     ],
   },
@@ -46,8 +46,8 @@ const footerItems = [
     title: "Legal",
     links: [
       {
-        text: "How to get start",
-        path: "/how-to-start",
+        text: "How to get started",
+        path: "/how-to-started",
       },
       {
         text: "Terms & Conditions",

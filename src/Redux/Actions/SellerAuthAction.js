@@ -6,7 +6,7 @@ export const sellerJoinRequest = (datas) => {
     dispatch({ type: sellerConstanse.sellerSingUpRequest });
     try {
       const res = await axios.post(
-        "http://localhost:8080/seller/joinin",
+        "https://ancient-dawn-67469.herokuapp.com/seller/joinin",
         datas
       );
 
@@ -30,7 +30,7 @@ export const activeSellerAccoutn = (datas) => {
     dispatch({ type: sellerConstanse.sellerSingUpRequest });
     try {
       const res = await axios.post(
-        "http://localhost:8080/account/seller/active",
+        "https://ancient-dawn-67469.herokuapp.com/account/seller/active",
         datas
       );
       const { user, token, message } = res.data;
