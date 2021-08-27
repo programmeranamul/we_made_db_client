@@ -24,7 +24,7 @@ const footerItems = [
     title: "Product",
     links: [
       {
-        text: "How it work",
+        text: "How it works",
         path: "/how-it-work",
       },
       {
@@ -46,7 +46,7 @@ const footerItems = [
     title: "Legal",
     links: [
       {
-        text: "How to get started",
+        text: "Imprint",
         path: "/how-to-started",
       },
       {
@@ -97,7 +97,7 @@ const Footer = () => {
             ))}
           </div>
           <h6 className="text-center text-white">
-            {new Date().getFullYear()} SQAREFEETBD
+            &copy; {new Date().getFullYear()} SQAREFEETBD
           </h6>
         </div>
       </div>

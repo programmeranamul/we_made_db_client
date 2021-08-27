@@ -54,7 +54,7 @@ const Header = () => {
                   as={Link}
                   to={item.path}
                   key={item.text}
-                  className="menu bg-orange ms-2 rounded mb-3 mb-md-0"
+                  className="menu bg-orange ms-3 rounded mb-3 mb-md-0"
                 >
                   {item.text}
                 </Nav.Link>
@@ -63,7 +63,7 @@ const Header = () => {
                 <Nav.Link
                   as={Link}
                   to={"/buyer/1"}
-                  className="menu bg-orange ms-2 rounded mb-3 mb-md-0"
+                  className="menu bg-orange ms-3 rounded mb-3 mb-md-0"
                 >
                   Buyer
                 </Nav.Link>
@@ -72,7 +72,7 @@ const Header = () => {
                 <Nav.Link
                   as={Link}
                   to={"/seller/1"}
-                  className="menu bg-orange ms-2 rounded mb-3 mb-md-0"
+                  className="menu bg-orange ms-3 rounded mb-3 mb-md-0"
                 >
                   Seller
                 </Nav.Link>
@@ -80,7 +80,7 @@ const Header = () => {
               {buyerAutyh.authenticate ? (
                 <Nav.Link
                   onClick={handelLogOut}
-                  className="menu bg-orange ms-2 rounded mb-3 mb-md-0"
+                  className="menu bg-orange ms-3 rounded mb-3 mb-md-0"
                 >
                   Log Out{" "}
                   {buyerAutyh.loading && (
@@ -92,14 +92,14 @@ const Header = () => {
                   <Nav.Link
                     as={Link}
                     to={"/join-us"}
-                    className="menu bg-orange ms-2 rounded mb-3 mb-md-0"
+                    className="menu bg-orange ms-3 rounded mb-3 mb-md-0"
                   >
-                    Join us
+                    Join now
                   </Nav.Link>
                   <Nav.Link
                     as={Link}
                     to={"/login"}
-                    className="menu bg-orange ms-2 rounded mb-3 mb-md-0"
+                    className="menu bg-orange ms-3 rounded mb-3 mb-md-0"
                   >
                     Log in
                   </Nav.Link>

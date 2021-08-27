@@ -1,6 +1,6 @@
 .get-start-banner {
-  clip-path: polygon(0 0, 100% 0%, 100% 80%, 0 96%);
-  background: url("../../Images/dane-deaner-qRfMB-IOQjE-unsplash.jpg");
+  /* clip-path: polygon(0 0, 100% 0%, 100% 80%, 0 96%); */
+  background: url("../../Images/How\ to\ get\ started.jpg");
   background-position: center;
   background-size: cover;
   height: 600px;

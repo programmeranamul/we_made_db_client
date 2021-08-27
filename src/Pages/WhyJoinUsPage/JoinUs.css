@@ -1,9 +1,9 @@
 .join-us {
-  clip-path: polygon(0 0, 100% 0%, 100% 80%, 0 96%);
-  background: url("../../Images/dane-deaner-qRfMB-IOQjE-unsplash.jpg");
+  /* clip-path: polygon(0 0, 100% 0%, 100% 80%, 0 96%); */
+  background: url("../../Images/Why\ join\ us.jpg");
   background-position: center;
   background-size: cover;
-  height: 600px;
+  height: 480px;
   position: relative;
   width: 100%;
 }

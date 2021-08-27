@@ -22,7 +22,7 @@ const outSideBd = [swap1, swap2, swap3];
 
 const BeniFitDes = () => {
   return (
-    <div>
+    <div  className="text-bg -mb50px pt-70">
       <div className="container">
         <div className="row">
           <h3 className="after-dis-title pb-2 text-center pb-3 mb-4">

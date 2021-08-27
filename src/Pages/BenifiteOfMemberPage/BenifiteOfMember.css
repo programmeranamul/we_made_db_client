@@ -1,6 +1,6 @@
 .benifite-member {
-  clip-path: polygon(0 0, 100% 0%, 100% 80%, 0 96%);
-  background: url("../../Images/dane-deaner-qRfMB-IOQjE-unsplash.jpg");
+  /* clip-path: polygon(0 0, 100% 0%, 100% 80%, 0 96%); */
+  background: url("../../Images/Benefits\ of\ Member.jpg");
   background-position: center;
   background-size: cover;
   height: 600px;

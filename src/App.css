@@ -39,19 +39,37 @@
   cursor: pointer;
 }
 
-.w-75px{
+.w-75px {
   width: 75px !important;
 }
-.rounded-9{
+.rounded-9 {
   border-radius: 9px;
 }
 
-.mb-135{
+.mb-135 {
   margin-bottom: 135px !important;
 }
-.buyerCardLogo{
+.buyerCardLogo {
   transform: translateY(-46px);
   margin: auto;
   margin-bottom: -20px;
 }
 
+.text-align-justify {
+  text-align: justify !important;
+}
+.-mb50px {
+  margin-bottom: -50px;
+}
+.text-bg {
+  background: url("./Images//text-bg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.py-70 {
+  padding-top: 70px !important;
+  padding-bottom: 70px !important;
+}
+.pt-70 {
+  padding-top: 70px !important;
+}

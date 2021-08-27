@@ -11,16 +11,16 @@ const coze1 = [
 ];
 
 const coz2 = [
-  "need;",
-  "interest;",
-  "budget;",
-  "timing;",
-  "decision maker's role;",
+  "Need",
+  "Interest",
+  "Budget",
+  "Timing",
+  "Decision maker's role",
 ];
 
 const WhyJoinDes = () => {
   return (
-    <div>
+    <div className="text-bg py-70 -mb50px">
       <div className="container">
         <p>There are many reasons of join us. </p>
         <p>

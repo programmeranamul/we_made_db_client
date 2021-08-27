@@ -55,10 +55,6 @@ const BuyerCompanyListPage = () => {
   if (buyerAutyh.user.type !== "Buyer") {
     history.replace("/");
   }
-  if (buyerAutyh.user.type === "Buyer") {
-    history.replace("/buyer/1");
-  }
-
   //get current page
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;

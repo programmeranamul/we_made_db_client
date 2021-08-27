@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useHistory, useLocation } from "react-router-dom";
@@ -7,6 +7,7 @@ import { Alert } from "react-bootstrap";
 import { login } from "../../Redux/Actions/BuyerAuthAction";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import "./Login.css"
 
 const Login = () => {
   const {
@@ -22,10 +23,10 @@ const Login = () => {
   let { from } = location.state || { from: { pathname: "/" } };
 
   if (buyerAutyh.authenticate && buyerAutyh.user.type === "Buyer") {
-    history.replace("/buyer/1")
+    history.replace("/buyer/1");
   }
-  if(buyerAutyh.authenticate && buyerAutyh.user.type === "Seller"){
-    history.replace("/seller/1")
+  if (buyerAutyh.authenticate && buyerAutyh.user.type === "Seller") {
+    history.replace("/seller/1");
   }
 
   const onSubmit = (data) => {
@@ -33,10 +34,10 @@ const Login = () => {
     dispatch(login(data));
   };
   return (
-    <div>
+    <div className="login-conatiner -mb50px">
       <div className="container">
         <div className="row">
-          <div className="col-md-6 border p-4 mx-auto border rounded">
+          <div className="col-md-6 border p-4 mx-auto border rounded bg-light">
             <h4 className="text-center join-us-title pb-4">
               Welcome to touch your dream
             </h4>

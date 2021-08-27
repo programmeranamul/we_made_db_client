@@ -4,7 +4,7 @@ const WhyJoinUsBanner = () => {
   return (
     <div className="join-us d-flex align-items-center">
       <div className="container index-1">
-        <h1 className="fs-50 text-white text-center gsb-text">Why Join Us</h1>
+        <h1 className="fs-50 text-white gsb-text mb-0" style={{margin:"0px"}}>Why join us</h1>
       </div>
     </div>
   );

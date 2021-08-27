@@ -1,7 +1,7 @@
 import React from "react";
 import { Table } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
-import { useSelector } from 'react-redux';
+import { useSelector } from "react-redux";
 
 const instracTion = [
   "Location of the property.",
@@ -63,21 +63,17 @@ const list = [
 const AfterBuyerLogin = () => {
   const history = useHistory();
   const buyerAutyh = useSelector((state) => state.buyerAuthReducer);
-  
+
   if (buyerAutyh.user.type !== "Buyer") {
     history.replace("/");
   }
-  if (buyerAutyh.user.type === "Buyer") {
-    history.replace("/buyer/1");
-  }
-
 
   return (
     <div className="mt-3 mb-5">
       <div className="container">
         <h4>
           No doubt, buying an apartment is a dream. Make sure of check few
-          important issues to consider before buy an apartment or flat.        
+          important issues to consider before buy an apartment or flat.
         </h4>
         <ul className="ps-5">
           {instracTion.map((item) => (
@@ -92,6 +88,7 @@ const AfterBuyerLogin = () => {
             <b>REHAB (Real Estate & Housing Association of Bangladesh)</b> is
             the only trade organization of Real Estate developers in Bangladesh.
             Here you find the Organizations name with REHAB Membership number
+            [Source: www.rehab-bd.rg]
           </p>
           {list.length > 0 ? (
             <div className="mb-135">

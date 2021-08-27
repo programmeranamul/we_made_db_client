@@ -37,7 +37,7 @@ const MemberShipData = [
         text: "connect with Marketing Qualified Lead (MQL) for further business communication.",
       },
     ],
-    paymentSystem: ["Banck", "Bkash", "Nagad"],
+    paymentSystem: ["Bank", "Bkash", "Nagad"],
   },
   {
     type: "3 Months",
@@ -50,7 +50,7 @@ const MemberShipData = [
         text: "connect with Marketing Qualified Lead (MQL) for further business communication.",
       },
     ],
-    paymentSystem: ["Banck", "Bkash", "Nagad"],
+    paymentSystem: ["Bank", "Bkash", "Nagad"],
   },
 ];
 
@@ -105,6 +105,13 @@ const MemberShipPlan = () => {
             </div>
           ))}
         </div>
+        <p className="mt-4">
+          <b>
+            To pay your Membership fee through Bkash and Nagad (Send money) to
+            <span className="text-danger"> 01739992976</span>.<br /> (Note:
+            Please keep record of your transaction details).
+          </b>
+        </p>
       </div>
     </div>
   );
