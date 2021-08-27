@@ -55,13 +55,13 @@ const Header = () => {
                   as={Link}
                   to={item.path}
                   key={item.text}
-                  className="menu bg-orange ms-2 rounded"
+                  className="menu bg-orange ms-2 rounded mb-3 mb-md-0"
                 >
                   {item.text}
                 </Nav.Link>
               ))}
               {buyerAutyh.authenticate ? (
-                <Nav.Link onClick={handelLogOut} className="menu bg-orange ms-2 rounded">
+                <Nav.Link onClick={handelLogOut} className="menu bg-orange ms-2 rounded mb-3 mb-md-0">
                   Log Out{" "}
                   {buyerAutyh.loading && (
                     <FontAwesomeIcon icon={faSpinner} className="fa-spin" />
@@ -72,11 +72,11 @@ const Header = () => {
                   <Nav.Link
                     as={Link}
                     to={"/join-us"}
-                    className="menu bg-orange ms-2 rounded"
+                    className="menu bg-orange ms-2 rounded mb-3 mb-md-0"
                   >
                     Join us
                   </Nav.Link>
-                  <Nav.Link as={Link} to={"/login"} className="menu bg-orange ms-2 rounded">
+                  <Nav.Link as={Link} to={"/login"} className="menu bg-orange ms-2 rounded mb-3 mb-md-0">
                     Log in
                   </Nav.Link>
                 </>

@@ -21,8 +21,11 @@ const Login = () => {
   let location = useLocation();
   let { from } = location.state || { from: { pathname: "/" } };
 
-  if (buyerAutyh.authenticate) {
+  if (buyerAutyh.authenticate && buyerAutyh.user.type === "Buyer") {
     history.replace("/buyer/1")
+  }
+  if(buyerAutyh.authenticate && buyerAutyh.user.type === "Seller"){
+    history.replace("/seller/1")
   }
 
   const onSubmit = (data) => {

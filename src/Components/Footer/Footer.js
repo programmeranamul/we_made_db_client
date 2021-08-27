@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import "./Footer.css";
 
 const footerItems = [
   {
@@ -67,18 +68,31 @@ const Footer = () => {
         <div className="pt-5 pb-2">
           <div className="row">
             {footerItems.map((footerItem) => (
-              <div key={footerItem.title} className="col-md-3">
-                <h6 className="fw-700 mb-3 text-white">{footerItem.title}</h6>
-                {footerItem.links.map((link) => (
-                  <p key={link.text} className="mb-2">
-                    <Link
-                      to={link.path}
-                      className="text-white fw-600 footer-link"
+              <div
+                key={footerItem.title}
+                className="col-md-3 col-sm-6 mb-3 mb-md-0 footer-link"
+                style={{ justifyContent: "center" }}
+              >
+                <div>
+                  <div>
+                    <h6
+                      className="fw-700 mb-3 text-white d-inline-block"
+                      style={{ borderBottom: "1px solid" }}
                     >
-                      {link.text}
-                    </Link>
-                  </p>
-                ))}
+                      {footerItem.title}
+                    </h6>
+                    {footerItem.links.map((link) => (
+                      <p key={link.text} className="mb-2">
+                        <Link
+                          to={link.path}
+                          className="text-white fw-600 footer-link"
+                        >
+                          {link.text}
+                        </Link>
+                      </p>
+                    ))}
+                  </div>
+                </div>
               </div>
             ))}
           </div>

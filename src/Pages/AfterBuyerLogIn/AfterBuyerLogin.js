@@ -1,6 +1,7 @@
 import React from "react";
 import { Table } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
+import { useSelector } from 'react-redux';
 
 const instracTion = [
   "Location of the property.",
@@ -61,12 +62,22 @@ const list = [
 
 const AfterBuyerLogin = () => {
   const history = useHistory();
+  const buyerAutyh = useSelector((state) => state.buyerAuthReducer);
+  
+  if (buyerAutyh.user.type !== "Buyer") {
+    history.replace("/");
+  }
+  if (buyerAutyh.user.type === "Buyer") {
+    history.replace("/buyer/1");
+  }
+
+
   return (
     <div className="mt-3 mb-5">
       <div className="container">
         <h4>
           No doubt, buying an apartment is a dream. Make sure of check few
-          important issues to consider before buy an apartment or flat.
+          important issues to consider before buy an apartment or flat.        
         </h4>
         <ul className="ps-5">
           {instracTion.map((item) => (

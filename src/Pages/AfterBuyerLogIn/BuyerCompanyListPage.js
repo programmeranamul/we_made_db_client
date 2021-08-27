@@ -1,6 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import { Table } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 const list = [
   {
@@ -46,6 +48,16 @@ const list = [
 const BuyerCompanyListPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(3);
+
+  const buyerAutyh = useSelector((state) => state.buyerAuthReducer);
+  const history = useHistory();
+
+  if (buyerAutyh.user.type !== "Buyer") {
+    history.replace("/");
+  }
+  if (buyerAutyh.user.type === "Buyer") {
+    history.replace("/buyer/1");
+  }
 
   //get current page
   const indexOfLastPost = currentPage * postsPerPage;

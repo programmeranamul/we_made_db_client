@@ -20,6 +20,8 @@ import AfterBuyerLogin from "./Pages/AfterBuyerLogIn/AfterBuyerLogin";
 import AccountActivate from "./Pages/JoinNowPage/AccountActivate";
 import BuyerCompanyListPage from "./Pages/AfterBuyerLogIn/BuyerCompanyListPage";
 import SellerAccountActive from "./Pages/JoinNowPage/SellerAccountActive";
+import AfterSellerLoginPage from './Pages/AfterSellerLogIn/AfterSellerLoginPage';
+import SellerList from "./Pages/AfterSellerLogIn/SellerList";
 axios.defaults.withCredentials = true;
 
 function App() {
@@ -66,6 +68,12 @@ function App() {
         <Route path="/account/seller/activate/:token">
           <SellerAccountActive />
         </Route>
+        <PrivetPage path="/seller/1">
+          <AfterSellerLoginPage />
+        </PrivetPage>
+        <PrivetPage path="/seller/show-all">
+          <SellerList />
+        </PrivetPage>
         <PrivetPage path="/buyer/1">
           <AfterBuyerLogin />
         </PrivetPage>
