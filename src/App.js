@@ -20,12 +20,18 @@ import AfterBuyerLogin from "./Pages/AfterBuyerLogIn/AfterBuyerLogin";
 import AccountActivate from "./Pages/JoinNowPage/AccountActivate";
 import BuyerCompanyListPage from "./Pages/AfterBuyerLogIn/BuyerCompanyListPage";
 import SellerAccountActive from "./Pages/JoinNowPage/SellerAccountActive";
-import AfterSellerLoginPage from './Pages/AfterSellerLogIn/AfterSellerLoginPage';
+import AfterSellerLoginPage from "./Pages/AfterSellerLogIn/AfterSellerLoginPage";
 import SellerList from "./Pages/AfterSellerLogIn/SellerList";
 import ContactUs from "./Pages/ContactUsPage/ContactUs";
 import Carear from "./Pages/CarearPage/Carear";
 import HowIsItWork from "./Pages/HowIsItWork/HowIsItWork";
 import MemberShipPlan from "./Pages/MemberShipPlan/MemberShipPlan";
+import PageNotFount from "./Pages/PageNotFount/PageNotFount";
+import AdminPage from "./Pages/AdminPage/AdminPage";
+import PrivacyPolicy from './Pages/PrivacyPolicy/PrivacyPolicy';
+import TermsCondition from "./Pages/TermsCondition/TermsCondition";
+import Imprint from './Pages/Imprint/Imprint';
+
 axios.defaults.withCredentials = true;
 
 function App() {
@@ -78,7 +84,7 @@ function App() {
         <Route path="/plans">
           <MemberShipPlan />
         </Route>
-        
+
         <Route path="/account/activate/:token">
           <AccountActivate />
         </Route>
@@ -97,6 +103,21 @@ function App() {
         <PrivetPage path="/buyer/list">
           <BuyerCompanyListPage />
         </PrivetPage>
+        <Route path="/admin">
+          <AdminPage />
+        </Route>
+        <Route path="/privacy-policy">
+          <PrivacyPolicy />
+        </Route>
+        <Route path="/terms&condition">
+          <TermsCondition />
+        </Route>
+        <Route path="/imprint">
+          <Imprint />
+        </Route>
+        <Route path="*">
+          <PageNotFount />
+        </Route>
       </Switch>
 
       <Footer />

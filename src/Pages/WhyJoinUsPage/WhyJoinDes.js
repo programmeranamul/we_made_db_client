@@ -21,7 +21,7 @@ const coz2 = [
 const WhyJoinDes = () => {
   return (
     <div className="text-bg py-70 -mb50px">
-      <div className="container">
+      <div className="container text-white">
         <p>There are many reasons of join us. </p>
         <p>
           Most commonly the sellers always search for the buyers. There're

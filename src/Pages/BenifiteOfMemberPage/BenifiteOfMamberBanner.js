@@ -2,9 +2,9 @@ import React from "react";
 
 const BenifiteOfMamberBanner = () => {
   return (
-    <div className="benifite-member d-flex align-items-center">
-      <div className="container index-1">
-        <h1 className="fs-50 text-white gsb-text">
+    <div className="benifite-member d-flex justify-content-center">
+      <div className="container index-1 text-center">
+        <h1 className="fs-50 d-inline-block gsb-text bg-orange p-2 rounded mx-auto text-dark mt-5">
           Benefits of member
         </h1>
       </div>

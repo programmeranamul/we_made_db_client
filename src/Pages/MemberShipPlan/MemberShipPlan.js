@@ -58,9 +58,9 @@ const MemberShipPlan = () => {
   return (
     <div className="mt-3 pb-5">
       <div className="container">
-        <h5 className="mb-2 pb-3">
+        <h2 className="mb-2 pb-3 text-orange">
           <b>Membership Plan:</b>
-        </h5>
+        </h2>
         <div className="row">
           {MemberShipData.map((memberShip) => (
             <div className="col-sm-4 mb-4 mt-2 mb-sm-0  d-flex">

@@ -47,7 +47,7 @@ const footerItems = [
     links: [
       {
         text: "Imprint",
-        path: "/how-to-started",
+        path: "/imprint",
       },
       {
         text: "Terms & Conditions",
@@ -63,7 +63,7 @@ const footerItems = [
 
 const Footer = () => {
   return (
-    <div className="footer mt-5">
+    <div className="footer bg-orange">
       <div className="container">
         <div className="pt-5 pb-2">
           <div className="row">
@@ -76,7 +76,7 @@ const Footer = () => {
                 <div>
                   <div>
                     <h6
-                      className="fw-700 mb-3 text-white d-inline-block"
+                      className="fw-700 mb-3 d-inline-block"
                       style={{ borderBottom: "1px solid" }}
                     >
                       {footerItem.title}
@@ -85,7 +85,7 @@ const Footer = () => {
                       <p key={link.text} className="mb-2">
                         <Link
                           to={link.path}
-                          className="text-white fw-600 footer-link"
+                          className="text-dark fw-600 footer-link"
                         >
                           {link.text}
                         </Link>
@@ -96,7 +96,7 @@ const Footer = () => {
               </div>
             ))}
           </div>
-          <h6 className="text-center text-white">
+          <h6 className="text-center ">
             &copy; {new Date().getFullYear()} SQAREFEETBD
           </h6>
         </div>

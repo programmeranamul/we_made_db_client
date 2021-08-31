@@ -3,7 +3,7 @@ import buyer from "../../Images/buyer.png";
 
 import "./JoinNow.css";
 import { useHistory } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 const JoinType = () => {
   const history = useHistory();
@@ -23,13 +23,15 @@ const JoinType = () => {
   }
 
   return (
-    <div className="bg-min-light join-us-container text-bg py-70 -mb50px">
+    <div className="bg-min-light join-us-container py-70 -mb50px">
       <div className="container">
-        <div className="col-md-8 col-12 mx-auto">
-          <h3 className="text-center">Join now</h3>
-          <p className="text-secondary text-center">
-            To begin this journey, tell us what type of account you would like
-            to open.
+        <div className="col-md-8 col-lg-6 col-12 ms-auto">
+          <div className="text-center">
+            <h1 className="text-center bg-orange d-inline-block p-2 rounded">Join now</h1>
+          </div>
+          <p className=" text-center">
+            <b>To begin this journey, tell us what type of account you would like
+            to open.</b>
           </p>
 
           <div
@@ -38,7 +40,7 @@ const JoinType = () => {
           >
             <img src={buyer} alt="" className="join-icon me-4" />
             <div>
-              <h4>Join as a Buyer</h4>
+              <h4 className="text-sky">Join as a Buyer</h4>
               <p>Get ready to meet the Experts</p>
             </div>
           </div>
@@ -48,7 +50,7 @@ const JoinType = () => {
           >
             <img src={buyer} alt="" className="join-icon me-4" />
             <div>
-              <h4>Join as a Seller</h4>
+              <h4 className="text-sky">Join as a Seller</h4>
               <p>Explore the valued Customers</p>
             </div>
           </div>

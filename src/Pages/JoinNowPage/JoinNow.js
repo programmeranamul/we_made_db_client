@@ -53,10 +53,10 @@ const JoinNow = () => {
   }
 
   return (
-    <div className="mt-4">
-      <div className="container">
-        <div className="col-md-6 mx-auto border rounded px-4 py-4">
-          <h4 className="text-center join-us-title pb-4">
+    <div className={`mt-4 bg-cover ${type === "Buyer" ? "buyer_login" : "seller_login"} py-5`}>
+      <div className="container pb-5 pt-3">
+        <div className="col-md-6 ms-auto border rounded px-4 py-4 bg-white">
+          <h4 className="text-center text-sky join-us-title pb-4">
             Start your journey to meet the {type}
           </h4>
           <Form className="mt-4" onSubmit={handleSubmit(onSubmit)}>
@@ -194,18 +194,18 @@ const JoinNow = () => {
                   Password or Confarm Password does not matach
                 </span>
               )}
-              {errors.password?.type === "required" && (
+              {errors.confarmPassword?.type === "required" && (
                 <span className="text-danger mt-2 d-block">
                   This field is required
                 </span>
               )}
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <button className="btn bg-orange fw-600 text-white" type="submit">
               Submit
               {state.loading && (
                 <FontAwesomeIcon icon={faSpinner} className="fa-spin" />
               )}
-            </Button>
+            </button>
           </Form>
           {state.error && (
             <Alert className="text-center mt-3" variant={"danger"}>

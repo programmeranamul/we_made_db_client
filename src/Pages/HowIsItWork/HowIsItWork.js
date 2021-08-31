@@ -22,11 +22,11 @@ const howWorkData2 = [
 
 const HowIsItWork = () => {
   return (
-    <div>
+    <div className="text-bg pb-5 pt-4 text-white">
       <div className="container">
-        <h5>
+        <h1 className="text-orange">
           <b>How it works:</b>
-        </h5>
+        </h1>
         <div className="mb-5">
           <ul>
             {howWorkData.map((item) => (

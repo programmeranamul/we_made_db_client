@@ -30,6 +30,10 @@ const menuItem = [
     text: "Benefits of member",
     path: "/benefite-of-member",
   },
+  {
+    text: "admin",
+    path: "/admin",
+  },
 ];
 
 const Header = () => {

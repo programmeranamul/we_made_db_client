@@ -25,9 +25,9 @@ const BeniFitDes = () => {
     <div  className="text-bg -mb50px pt-70">
       <div className="container">
         <div className="row">
-          <h3 className="after-dis-title pb-2 text-center pb-3 mb-4">
+          <h2 className="after-dis-title pb-2 text-center text-orange pb-3 mb-4">
             Member (Bangladesh)
-          </h3>
+          </h2>
           {Bangladesh.map((discount) => (
             <div
               key={discount}
@@ -41,9 +41,9 @@ const BeniFitDes = () => {
         </div>
 
         <div className="row mt-4 mb-3">
-          <h3 className="after-dis-title pb-2 text-center pb-3 mb-4">
+          <h2 className="after-dis-title pb-2 text-center text-orange pb-3 mb-4">
             Member (Non-Resident Bangladeshi)
-          </h3>
+          </h2>
           {outSideBd.map((discount) => (
             <div
               key={discount}

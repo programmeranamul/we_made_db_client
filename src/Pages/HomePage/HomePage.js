@@ -1,15 +1,14 @@
 import React from "react";
-import Footer from "../../Components/Footer/Footer";
 import AfterBanner from "./AfterBanner";
 import Banner from "./Banner";
 import "./HomePage.css";
 
-const HomePage = () => {
+
+const HomePage = () => { 
   return (
     <div>
-     <Banner />
-     <AfterBanner />
-     
+      <Banner />
+      <AfterBanner />
     </div>
   );
 };

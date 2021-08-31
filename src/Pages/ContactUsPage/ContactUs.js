@@ -4,6 +4,7 @@ import { Form, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { useSelector } from "react-redux";
+import "./Conatctus.css"
 
 const ContactUs = () => {
   const {
@@ -21,9 +22,9 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="mt-4 pt-3">
-      <div className="container">
-      <div className="col-md-6 mx-auto border rounded px-4 py-4">
+    <div className="py-5 conatct-us">
+      <div className="container pb-4">
+      <div className="col-md-6 ms-auto border rounded bg-white px-4 py-4">
           <h5 className="mx-auto fw-700">Conact Us</h5>
           <Form className="mt-4" onSubmit={handleSubmit(onSubmit)}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -130,12 +131,12 @@ const ContactUs = () => {
               )}
             </Form.Group>
 
-            <Button variant="primary" type="submit">
+            <button className="btn bg-orange tw-600 text-white"  type="submit">
               Submit
               {conactStore.loading && (
                 <FontAwesomeIcon icon={faSpinner} className="fa-spin" />
               )}
-            </Button>
+            </button>
           </Form>
         </div>
       </div>

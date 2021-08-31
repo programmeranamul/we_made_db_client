@@ -80,9 +80,9 @@ const BuyerCompanyListPage = () => {
               <Table striped bordered hover className="mt-5 ">
                 <thead>
                   <tr>
-                    <th>Sr.</th>
-                    <th>REHAB Membership No</th>
-                    <th>Company Name</th>
+                    <th className="bg-primary text-white">Sr.</th>
+                    <th className="text-black bg-orange ">REHAB Membership No</th>
+                    <th className="bg-primary text-white">Company Name</th>
                   </tr>
                 </thead>
                 <tbody>

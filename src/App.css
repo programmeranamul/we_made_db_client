@@ -6,12 +6,14 @@
 }
 
 .bg-orange {
-  background-color: #feaf1d;
+  background-color: #feaf1d !important;
 }
 .text-orange {
   color: #feaf1d;
 }
-
+.text-decoration{
+  text-decoration: none !important;
+}
 .fw-700 {
   font-weight: 700 !important;
 }
@@ -49,6 +51,9 @@
 .mb-135 {
   margin-bottom: 135px !important;
 }
+.mb-70 {
+  margin-bottom: 90px !important;
+}
 .buyerCardLogo {
   transform: translateY(-46px);
   margin: auto;
@@ -58,11 +63,11 @@
 .text-align-justify {
   text-align: justify !important;
 }
-.-mb50px {
+/* .-mb50px {
   margin-bottom: -50px;
-}
+} */
 .text-bg {
-  background: url("./Images//text-bg.jpg");
+  background: url("./Assest/Image/textBg.jpeg");
   background-size: cover;
   background-position: center;
 }
@@ -73,3 +78,27 @@
 .pt-70 {
   padding-top: 70px !important;
 }
+
+/* .bg-blur {
+  position: relative;
+}
+.bg-blur::after {
+  position: absolute;
+  content: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+} */
+
+.-mt-10{
+  margin-top: -10px !important;
+}
+
+.text-justify{
+  text-align: justify !important;
+}
+/* .adminHeight{
+  min-height: 65vh;
+} */

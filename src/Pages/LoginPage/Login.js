@@ -30,15 +30,14 @@ const Login = () => {
   }
 
   const onSubmit = (data) => {
-    console.log(data);
     dispatch(login(data));
   };
   return (
     <div className="login-conatiner -mb50px">
       <div className="container">
         <div className="row">
-          <div className="col-md-6 border p-4 mx-auto border rounded bg-light">
-            <h4 className="text-center join-us-title pb-4">
+          <div className="col-md-6 border p-4 me-auto border rounded bg-light">
+            <h4 className="text-center join-us-title pb-4 text-sky">
               Welcome to touch your dream
             </h4>
             <Form className="mt-4" onSubmit={handleSubmit(onSubmit)}>
@@ -85,12 +84,12 @@ const Login = () => {
                 )}
               </Form.Group>
 
-              <Button variant="primary" type="submit">
+              <button className="btn bg-orange fw-600 text-white"  type="submit">
                 Login{"  "}
                 {buyerAutyh.loading && (
                   <FontAwesomeIcon icon={faSpinner} className="fa-spin" />
                 )}
-              </Button>
+              </button>
             </Form>
             {buyerAutyh.error && (
               <Alert className="text-center mt-3" variant={"danger"}>

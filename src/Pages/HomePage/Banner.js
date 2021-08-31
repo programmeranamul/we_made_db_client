@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 const bannerText = [
   "Welcome to the largest",
   "B2C sourcing platform for",
-  "Real Estate projects in Bangladesh",
+  "Real Estate projects in Bangladesh.",
 ];
 
 const Banner = () => {
@@ -18,15 +18,15 @@ const Banner = () => {
       <div className="container wrapper">
         <div className="row">
           <div className="col">
-            <div>
+            <div className="mt-70">
               {bannerText.map((item) => (
-                <h1 className="banner-text text-white" key={item}>
+                <h2 className="banner-text text-white" key={item}>
                   {item}
-                </h1>
+                </h2>
               ))}
             </div>
             <button
-              className="btn bg-sky fw-700 mt-4"
+              className="btn bg-orange fw-700 mt-4"
               onClick={() => history.push("/join-us")}
             >
               Get Started

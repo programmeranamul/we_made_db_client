@@ -2,6 +2,7 @@ import React from "react";
 import { Table } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
+import "./AfterBuyerLogin.css"
 
 const instracTion = [
   "Location of the property.",
@@ -70,20 +71,23 @@ const AfterBuyerLogin = () => {
 
   return (
     <div className="mt-3 mb-5">
-      <div className="container">
-        <h4>
-          No doubt, buying an apartment is a dream. Make sure of check few
-          important issues to consider before buy an apartment or flat.
-        </h4>
-        <ul className="ps-5">
-          {instracTion.map((item) => (
-            <li className="item" key={item}>
-              {item}
-            </li>
-          ))}
-        </ul>
-
-        <div className="mt-5">
+      <div className="afterBuyerLogin  py-5">
+        <div className="container index-1 text-black bg-blur">
+          <h4>
+            No doubt, buying an apartment is a dream. Make sure of check few
+            important issues to consider before buy an apartment or flat.
+          </h4>
+          <ul className="ps-5">
+            {instracTion.map((item) => (
+              <li className="item" key={item}>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    
+        <div className="mt-5 container">
           <p>
             <b>REHAB (Real Estate & Housing Association of Bangladesh)</b> is
             the only trade organization of Real Estate developers in Bangladesh.
@@ -95,9 +99,9 @@ const AfterBuyerLogin = () => {
               <Table striped bordered hover className="mt-5 ">
                 <thead>
                   <tr>
-                    <th>Sr.</th>
-                    <th>REHAB Membership No</th>
-                    <th>Company Name</th>
+                    <th className="bg-primary text-white">Sr.</th>
+                    <th className="text-black bg-orange ">REHAB Membership No</th>
+                    <th className="bg-primary text-white">Company Name</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -120,7 +124,7 @@ const AfterBuyerLogin = () => {
               </div>
             </div>
           ) : null}
-        </div>
+        
       </div>
     </div>
   );

@@ -21,9 +21,10 @@ const AccountActivate = () => {
   }
 
   return (
-    <div className="mt-4">
+    <div className="mt-3 mb-5 pb-5">
       <div className="container">
         <div className="text-center">
+          <h5 className="text-sky">Please active your account.</h5>
           <button
             className="btn btn-primary mx-auto"
             onClick={handelAccoutnActive}
