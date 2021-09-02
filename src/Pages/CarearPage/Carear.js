@@ -58,7 +58,7 @@ const Carear = () => {
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                   <Form.Label>
-                    Email <span className="text-danger">*</span>
+                    Email
                   </Form.Label>
                   <Form.Control
                     type="text"

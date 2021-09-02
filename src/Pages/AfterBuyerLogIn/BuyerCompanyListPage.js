@@ -94,7 +94,7 @@ const BuyerCompanyListPage = () => {
                     </tr>
                   ))}
                 </tbody>
-              </Table>{" "}
+              </Table>
             </div>
           ) : null}
         </div>

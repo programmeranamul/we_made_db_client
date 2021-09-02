@@ -31,6 +31,9 @@ export const sellerConstanse = {
 export const adminConstanse = {
   getAllUserSuccess: "getAllUserSuccess",
   getAllUserFail: "getAllUserFail",
+  addNewAdminRequest:"addNewAdminRequest",
+  addNewAdminSuccess: "addNewAdminSuccess",
+  addNewAdminFail:"addNewAdminFail"
 };
 
 //carear constanse

@@ -1,30 +1,38 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, Route, Switch, useHistory } from "react-router-dom";
 import AdminList from "./AdminList";
-import AdminSeller from "./AdminSeller";
-import { useSelector } from 'react-redux';
+import AdminUser from "./AdminUser";
+import { useSelector } from "react-redux";
+import AddAdmin from "./AddAdmin";
+import { useDispatch } from "react-redux";
+import { getAllUser } from "./../../Redux/Actions/AdminAction";
+import UpgradeUser from "./UpgradeUser";
 
 const adminMenus = [
   { text: "Home", path: "/admin" },
-  { text: "Seller", path: "/admin/v7/seller" },
-  { text: "Buyer", path: "/admin/v7/buyer" },
+  { text: "User", path: "/admin/v7/user" },
   { text: "Admin List", path: "/admin/v8/lk/mk/list/admin" },
 ];
 
-
 const AdminPage = () => {
   const history = useHistory();
-const buyerAutyh = useSelector((state) => state.buyerAuthReducer);
+  const dispatch = useDispatch();
+  const buyerAutyh = useSelector((state) => state.buyerAuthReducer);
 
-if (buyerAutyh.user.type !== "admin") {
-  history.replace("/");
-}
+  if (buyerAutyh.user.type !== "admin") {
+    history.replace("/");
+  }
+
+  useEffect(() => {
+    dispatch(getAllUser());
+  }, []);
+
   return (
     <div>
-      <div>
+      <div className="container">
         <div className="row">
-          <div className="col-sm-3 bg-light p-3 adminHeight">
-            <div className="container">
+          <div className="col-md-3 bg-light p-3 adminHeight">
+            <div className="">
               {adminMenus.map((item, index) => (
                 <p key={index}>
                   <Link
@@ -37,16 +45,25 @@ if (buyerAutyh.user.type !== "admin") {
               ))}
             </div>
           </div>
-          <div className="col-sm-9 bg-primary p-3 px-3 px-md-4 px-lg-5 text-white" style={{minHeight:"80vh"}}>
+          <div
+            className="col-md-9 bg-primary p-3 px-3 px-md-4 px-lg-5 text-white"
+            style={{ minHeight: "80vh" }}
+          >
             <Switch>
               <Route exact path="/admin">
                 <h4 className="text-center">Welcome to admin dashboard</h4>
               </Route>
-              <Route path="/admin/seller">
-                <AdminSeller />
+              <Route path="/admin/v7/user" exact>
+                <AdminUser />
+              </Route>
+              <Route path="/admin/new" exact>
+                <AddAdmin />
               </Route>
               <Route path="/admin/v8/lk/mk/list/admin" exact>
                 <AdminList />
+              </Route>
+              <Route path = "/admin/v7/user/upgrade/:email" >
+                <UpgradeUser />
               </Route>
               <Route path="*">
                 <h4 className="text-center">Page Not Found</h4>

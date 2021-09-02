@@ -29,7 +29,7 @@ const Login = () => {
     history.replace("/seller/1");
   }
   if (buyerAutyh.authenticate && buyerAutyh.user.type === "admin") {
-    history.replace("admin");
+    history.replace("/admin");
   }
 
   const onSubmit = (data) => {
