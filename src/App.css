@@ -1,3 +1,7 @@
+*{
+  margin: 0;
+  padding: 0;
+}
 .bg-sky {
   background-color: #417ce2;
 }
@@ -11,7 +15,7 @@
 .text-orange {
   color: #feaf1d;
 }
-.text-decoration{
+.text-decoration {
   text-decoration: none !important;
 }
 .fw-700 {
@@ -27,6 +31,9 @@
 }
 .fs-50 {
   font-size: 40px !important;
+}
+.fs-17{
+  font-size: 17px !important;
 }
 
 /* z-index */
@@ -92,13 +99,26 @@
   background-color: rgba(0, 0, 0, 0.6);
 } */
 
-.-mt-10{
+.-mt-10 {
   margin-top: -10px !important;
 }
 
-.text-justify{
+.text-justify {
   text-align: justify !important;
 }
 /* .adminHeight{
   min-height: 65vh;
 } */
+
+[class^="number-slide"],
+[class*=" number-slide"] {
+  background: grey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  color: #fff;
+  font-weight: 500;
+  height: 150px;
+  max-height: 100vh;
+}

@@ -1,9 +1,10 @@
 
 .afterBuyerLogin {
-    background: url("../../Assest/Image/Buyer.jpg");
+    background: url("../../Assest/Image/Fainal/WhatsApp\ Image\ 2021-08-29\ at\ 8.25.29\ PM.jpeg");
     background-size: cover;
     background-position: center;
     position: relative;
+    color: white !important;
   }
   /* .afterBuyerLogin::before {
       position: absolute;

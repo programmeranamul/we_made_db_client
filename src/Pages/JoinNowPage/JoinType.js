@@ -27,16 +27,22 @@ const JoinType = () => {
       <div className="container">
         <div className="col-md-8 col-lg-6 col-12 ms-auto">
           <div className="text-center">
-            <h1 className="text-center bg-orange d-inline-block p-2 rounded">Join now</h1>
+            <h1 className="text-center bg-primary text-white d-inline-block p-2 rounded">
+              Join now
+            </h1>
           </div>
-          <p className=" text-center">
-            <b>To begin this journey, tell us what type of account you would like
-            to open.</b>
-          </p>
+          <div className="text-center mt-4">
+            <p className=" text-center mb-1">
+              <b className="d-inline-block bg-orange px-1 rounded">To begin this journey</b>
+            </p>
+            <p className=" text-center ">
+              <b className="d-inline-block bg-orange px-1 rounded">Tell us what type of account you would like to open.</b>
+            </p>
+          </div>
 
           <div
             onClick={() => jointype("Buyer")}
-            className="div cursor-pointer d-flex p-4 mt-5 mb-5 bg-light  rounded-9 shadow-90"
+            className="div cursor-pointer d-flex p-4  mb-5 bg-light  rounded-9 shadow-90"
           >
             <img src={buyer} alt="" className="join-icon me-4" />
             <div>

@@ -28,10 +28,10 @@ export const sellerConstanse = {
   sellerSingUpFail: "sellerSingUpFail",
 };
 
-
-
+export const adminConstanse = {
+  getAllUserSuccess: "getAllUserSuccess",
+  getAllUserFail: "getAllUserFail",
+};
 
 //carear constanse
-export const careareConstanse = {
-  
-}
+export const careareConstanse = {};

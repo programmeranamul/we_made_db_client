@@ -22,8 +22,8 @@ const AfterSellerLoginPage = () => {
   return (
     <div className="pb-5">
       <div className="AfterSelerTop py-5">
-        <div className="container index-1 text-black bg-blur">
-          <h4>
+        <div className="container index-1 text-white bg-blur">
+          <h4 className="d-inline-block bg-sky text-white p-2 rounded">
             Sales is an art that requires the ability to form good relationships
             with others as well as a science that requires the development of
             successful, repeatable strategies.{" "}
@@ -41,8 +41,8 @@ const AfterSellerLoginPage = () => {
       <div className="container">
         {sellerDetails.length > 0 ? (
           <div className="mt-5">
-            <h5 className="mb-4 pb-2">
-              <b>Our Buyers (Marketing Qualified Leads) are waiting for you</b>
+            <h5 className="mb-4 p-2 bg-orange text-black rounded d-inline-block">
+              Our Buyers (Marketing Qualified Leads) are waiting for you.
             </h5>
             <div className="row">
               {sellerDetails.slice(0, 3).map((item) => (

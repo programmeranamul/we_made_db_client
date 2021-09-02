@@ -55,11 +55,11 @@ const JoinNow = () => {
   return (
     <div className={`mt-4 bg-cover ${type === "Buyer" ? "buyer_login" : "seller_login"} py-5`}>
       <div className="container pb-5 pt-3">
-        <div className="col-md-6 ms-auto border rounded px-4 py-4 bg-white">
+        <div className={`col-md-6 border rounded px-4 py-4 bg-white ${type === "Buyer" ? "ms-auto" : "me-auto"}`}>
           <h4 className="text-center text-sky join-us-title pb-4">
             Start your journey to meet the {type}
           </h4>
-          <Form className="mt-4" onSubmit={handleSubmit(onSubmit)}>
+          <Form className={`mt-4`} onSubmit={handleSubmit(onSubmit)}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Name</Form.Label>
               <Form.Control

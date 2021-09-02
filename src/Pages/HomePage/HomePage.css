@@ -37,7 +37,7 @@
 .wrapper {
   z-index: 1;
 }
-.mt-70{
+.mt-70 {
   margin-top: 75px;
 }
 
@@ -68,6 +68,8 @@
   align-items: center;
   display: flex;
   justify-content: center;
+  background-color: orange;
+  border: orange;
 }
 
 .footer-link {
@@ -89,8 +91,7 @@
   height: 365px;
 } */
 
-.Customer111{
+.Customer111 {
   background: url("../../Assest/Image/111CustomerBg.jpeg");
   background-size: cover;
 }
-

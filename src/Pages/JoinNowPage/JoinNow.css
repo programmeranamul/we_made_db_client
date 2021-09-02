@@ -12,17 +12,17 @@
   bottom: 0;
 }
 .join-us-container {
-  background: url("../../Assest/Image/joinNow.jpg");
+  background: url("../../Assest//Image//Fainal/Join\ Now.jpeg");
   background-size: cover;
   background-position: right;
 }
 
 
 .buyer_login{
-  background: url("../../Assest/Image/buyerJoinIn.jpg");  
+  background: url("../../Assest/Image/Fainal/Buyer\ Login.jpeg")  
 }
 .seller_login{
-  background: url("../../Assest/Image/sellerJoinIn.jpg");
+  background: url("../../Assest/Image/Fainal/Career\ 2.jpeg");
 }
 .bg-cover{
   background-size: cover;

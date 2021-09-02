@@ -11,7 +11,7 @@ const footerItems = [
         path: "/about-us",
       },
       {
-        text: "Carrers",
+        text: "Careers",
         path: "/carrers",
       },
       {

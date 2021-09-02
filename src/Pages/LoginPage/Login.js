@@ -28,6 +28,9 @@ const Login = () => {
   if (buyerAutyh.authenticate && buyerAutyh.user.type === "Seller") {
     history.replace("/seller/1");
   }
+  if (buyerAutyh.authenticate && buyerAutyh.user.type === "admin") {
+    history.replace("admin");
+  }
 
   const onSubmit = (data) => {
     dispatch(login(data));
@@ -36,7 +39,7 @@ const Login = () => {
     <div className="login-conatiner -mb50px">
       <div className="container">
         <div className="row">
-          <div className="col-md-6 border p-4 me-auto border rounded bg-light">
+          <div className="col-md-5 border p-4 me-auto border rounded bg-light">
             <h4 className="text-center join-us-title pb-4 text-sky">
               Welcome to touch your dream
             </h4>

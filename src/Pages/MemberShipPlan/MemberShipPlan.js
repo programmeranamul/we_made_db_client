@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
+import "./MembarShipPlan.css"
 
 const MemberShipData = [
   //   {
@@ -56,10 +57,10 @@ const MemberShipData = [
 
 const MemberShipPlan = () => {
   return (
-    <div className="mt-3 pb-5">
+    <div className="mt-3 pb-5 memberShip_conatiner">
       <div className="container">
-        <h2 className="mb-2 pb-3 text-orange">
-          <b>Membership Plan:</b>
+        <h2 className="mb-2 rounded text-orange d-inline-block text-white bg-primary p-2 ">
+          <b>Membership Plan</b>
         </h2>
         <div className="row">
           {MemberShipData.map((memberShip) => (
@@ -67,7 +68,7 @@ const MemberShipPlan = () => {
               <div class=" d-flex">
                 <div className="card">
                   <div className="card-header bg-white text-center text-orange fw-700">
-                    <h5>{memberShip.type}</h5>
+                    <h5 className="text-sky">{memberShip.type}</h5>
                   </div>
                   <ul class="list-group list-group-flush mb-auto">
                     {memberShip.service.map((data) => (
@@ -105,11 +106,10 @@ const MemberShipPlan = () => {
             </div>
           ))}
         </div>
-        <p className="mt-4">
+        <p className="mt-4 bg-sky text-white p-2 text-center">
           <b>
-            To pay your Membership fee through Bkash and Nagad (Send money) to
-            <span className="text-danger"> 01739992976</span>.<br /> (Note:
-            Please keep record of your transaction details).
+            To pay your Membership fee through Bkash and Nagad (Send money ) to <span> </span>
+            <span className="bg-sky text-white"> 01739992976</span>.<br /> (Note: Please keep record of your transaction details and text your transaction number to Customer Support in live chat).
           </b>
         </p>
       </div>

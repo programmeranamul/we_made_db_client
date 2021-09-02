@@ -32,8 +32,8 @@ const SellerList = () => {
       <div className="container">
         {sellerDetails.length > 0 ? (
           <div className="mt-5">
-            <h5 className="mb-4 pb-2">
-              <b>Our Buyers (Marketing Qualified Leads) are waiting for you</b>
+            <h5 className="mb-4 p-2 text-black bg-orange rounded  d-inline-block">
+              Our Buyers (Marketing Qualified Leads) are waiting for you.
             </h5>
             <div className="row">
               {currentPosts.map((item) => (

@@ -1,7 +1,8 @@
 import React from "react";
-import { Link, Route, Switch } from "react-router-dom";
+import { Link, Route, Switch, useHistory } from "react-router-dom";
 import AdminList from "./AdminList";
 import AdminSeller from "./AdminSeller";
+import { useSelector } from 'react-redux';
 
 const adminMenus = [
   { text: "Home", path: "/admin" },
@@ -10,7 +11,14 @@ const adminMenus = [
   { text: "Admin List", path: "/admin/v8/lk/mk/list/admin" },
 ];
 
+
 const AdminPage = () => {
+  const history = useHistory();
+const buyerAutyh = useSelector((state) => state.buyerAuthReducer);
+
+if (buyerAutyh.user.type !== "admin") {
+  history.replace("/");
+}
   return (
     <div>
       <div>

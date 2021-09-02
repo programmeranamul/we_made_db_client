@@ -13,8 +13,7 @@ const Banner = () => {
   const history = useHistory();
 
   return (
-    <div className="banner-container d-flex align-items-center mt-3">
-      {/* <img src={test} alt="" className="banner-bg"/> */}
+    <div className="banner-container d-flex align-items-center mt-3">     
       <div className="container wrapper">
         <div className="row">
           <div className="col">

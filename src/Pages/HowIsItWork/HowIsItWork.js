@@ -1,8 +1,8 @@
 import React from "react";
 
 const howWorkData = [
-  "Introduce your projects to Buyers",
-  "Be a part of the largest buyer sourcing platform for Residential, Commercial and Land projects",
+  "Introduce your projects to Buyers.",
+  "Be a part of the largest buyer sourcing platform for Residential, Commercial and Land projects.",
   "Create your tremendous company profile and make it visible to buyers.",
   "Exhibit your brand new project development.",
   "Build trust by display your verified certificates and/or membership.",
@@ -24,16 +24,18 @@ const HowIsItWork = () => {
   return (
     <div className="text-bg pb-5 pt-4 text-white">
       <div className="container">
-        <h1 className="text-orange">
-          <b>How it works:</b>
+        <h1 className="text-white bg-primary d-inline-block p-2 rounded">
+          <b>How it works</b>
         </h1>
-        <div className="mb-5">
+        <div className="mb-5 mt-5">
+          <h4 className="bg-orange text-black d-inline-block p-2 rounded">Seller</h4>
           <ul>
             {howWorkData.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
         </div>
+        <h4 className="bg-orange text-black d-inline-block p-2 rounded">Buyer</h4>
         <ul>
           {howWorkData2.map((item) => (
             <li key={item}>{item}</li>

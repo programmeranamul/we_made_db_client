@@ -10,13 +10,7 @@ const coze1 = [
   "Direct Marketing and etc.",
 ];
 
-const coz2 = [
-  "Need",
-  "Interest",
-  "Budget",
-  "Timing",
-  "Decision maker's role",
-];
+const coz2 = ["Need", "Interest", "Budget", "Timing", "Decision maker's role"];
 
 const WhyJoinDes = () => {
   return (
@@ -43,14 +37,12 @@ const WhyJoinDes = () => {
         </ul>
         <p>
           A Marketing Qualified Lead (MQL) is a lead who has indicated interest
-          in what a brand has to offer based on marketing efforts or is
-          otherwise more likely to become a customer than other leads.
+          in what a brand has to offer based on marketing efforts.
         </p>
         <p>
-          We work for the Seller to save their time and expenses to reach the
-          Marketing Qualified Lead (MQL).{" "}
+          We work for both the Buyer and Seller to save their time and expenses to reach the
+          Marketing Qualified Lead (MQL). So, why don’t you join us?
         </p>
-        <p>So, why don’t you join us? </p>
       </div>
     </div>
   );

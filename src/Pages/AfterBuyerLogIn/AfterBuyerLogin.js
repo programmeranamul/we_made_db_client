@@ -72,8 +72,8 @@ const AfterBuyerLogin = () => {
   return (
     <div className="mt-3 mb-5">
       <div className="afterBuyerLogin  py-5">
-        <div className="container index-1 text-black bg-blur">
-          <h4>
+        <div className="container index-1 text-white bg-blur">
+          <h4 className="bg-primary p-2 rounded">
             No doubt, buying an apartment is a dream. Make sure of check few
             important issues to consider before buy an apartment or flat.
           </h4>

@@ -31,6 +31,7 @@ import AdminPage from "./Pages/AdminPage/AdminPage";
 import PrivacyPolicy from './Pages/PrivacyPolicy/PrivacyPolicy';
 import TermsCondition from "./Pages/TermsCondition/TermsCondition";
 import Imprint from './Pages/Imprint/Imprint';
+// import { Swiper, SwiperSlide } from "swiper/react";
 
 axios.defaults.withCredentials = true;
 
@@ -103,9 +104,9 @@ function App() {
         <PrivetPage path="/buyer/list">
           <BuyerCompanyListPage />
         </PrivetPage>
-        <Route path="/admin">
+        <PrivetPage path="/admin">
           <AdminPage />
-        </Route>
+        </PrivetPage>
         <Route path="/privacy-policy">
           <PrivacyPolicy />
         </Route>
@@ -119,7 +120,6 @@ function App() {
           <PageNotFount />
         </Route>
       </Switch>
-
       <Footer />
     </Router>
   );

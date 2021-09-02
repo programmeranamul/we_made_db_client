@@ -23,13 +23,13 @@ const Carear = () => {
     <div className="carear-wrapper py-5">
       <div className="container">
         <div className="row">
-          <div className="col-md-6 d-flex align-items-center">
+          <div className="col-md-6 d-flex">
             <div>
-            <h2 className="mx-auto fw-700 text-orange">Carrers:</h2>
-            <h6 className="mb-4 text-sky text-justify">
+            <h2 className="text-center bg-primary text-white d-inline-block p-2 rounded">Careers</h2>
+            <h6 className="mb-4 bg-orange d-inline-block p-2 rounded text-justify">
               We will offer exciting career opportunities soon. Whether it's the
               diverse challenges daily within the job or the large scope for
-              applying creativity in your work - there are enough reasons to
+              applying creativity in your work. There are enough reasons to
               join our motivated team.
             </h6>
             </div>
