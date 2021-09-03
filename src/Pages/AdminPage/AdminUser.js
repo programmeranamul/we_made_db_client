@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 
 const AdminUser = () => {
   const AdminStore = useSelector((state) => state.adminStore);
-  const userList = AdminStore.userList.filter((item) => item.type !== "admin");
+  const userList = AdminStore?.userList?.filter((item) => item.type !== "admin");
   const [user, setUser] = useState({});
 
   //pagination
@@ -23,7 +23,7 @@ const AdminUser = () => {
   const handelChange = (e) => {
     const email = e.target.value.trim();
     if (email) {
-      const sellerEmail = userList.find((user) => user.email === email);
+      const sellerEmail = userList?.find((user) => user.email === email);
       setUser(sellerEmail);
     } else {
       setUser({});

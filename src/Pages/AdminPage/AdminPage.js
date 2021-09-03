@@ -7,11 +7,13 @@ import AddAdmin from "./AddAdmin";
 import { useDispatch } from "react-redux";
 import { getAllUser } from "./../../Redux/Actions/AdminAction";
 import UpgradeUser from "./UpgradeUser";
+import PremiumUser from './PremiumUser';
 
 const adminMenus = [
   { text: "Home", path: "/admin" },
   { text: "User", path: "/admin/v7/user" },
   { text: "Admin List", path: "/admin/v8/lk/mk/list/admin" },
+  { text: "premium User", path: "/admin/premium/user" },
 ];
 
 const AdminPage = () => {
@@ -64,6 +66,9 @@ const AdminPage = () => {
               </Route>
               <Route path = "/admin/v7/user/upgrade/:email" >
                 <UpgradeUser />
+              </Route>
+              <Route path = "/admin/premium/user" >
+                <PremiumUser/>
               </Route>
               <Route path="*">
                 <h4 className="text-center">Page Not Found</h4>

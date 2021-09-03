@@ -19,7 +19,7 @@ const sliderImages = [bnn1, bnn2, bnn3, bnn4, bnn5];
 const AfterBanner = () => {
   const settings = {
     infinite: true,
-    speed: 1000,
+    speed: 1500,
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
@@ -34,16 +34,7 @@ const AfterBanner = () => {
         <div>
           <img src={brokerFree} alt="" className="w-100" />
         </div>
-      </div>
-      <div className="sliderw-100 py-5">
-        <Slider {...settings}>
-          {sliderImages.map((item, index) => (
-            <div key={index}>
-              <img className="w-100" src={item} alt="" />
-            </div>
-          ))}
-        </Slider>
-      </div> 
+      </div>      
 
       <div className="Customer111 pt-4 pb-5 -mb50px">
         <div className="container">
@@ -70,6 +61,15 @@ const AfterBanner = () => {
           </div>
         </div>
       </div>
+      <div className="sliderw-100 py-5">
+        <Slider {...settings}>
+          {sliderImages.map((item, index) => (
+            <div key={index}>
+              <img className="w-100" src={item} alt="" />
+            </div>
+          ))}
+        </Slider>
+      </div> 
     </div>
   );
 };

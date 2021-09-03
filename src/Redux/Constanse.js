@@ -31,9 +31,28 @@ export const sellerConstanse = {
 export const adminConstanse = {
   getAllUserSuccess: "getAllUserSuccess",
   getAllUserFail: "getAllUserFail",
-  addNewAdminRequest:"addNewAdminRequest",
+  addNewAdminRequest: "addNewAdminRequest",
   addNewAdminSuccess: "addNewAdminSuccess",
-  addNewAdminFail:"addNewAdminFail"
+  addNewAdminFail: "addNewAdminFail",
+};
+
+export const adminUserDelet = {
+  userDeletRequest: "userDeletRequest",
+  userDeletSuccess: "userDeletSuccess",
+  userDeletFail: "userDeletFail",
+};
+
+export const userUpgrafeConst = {
+  userUpgradeRequest: "userUpgradeRequest",
+  userUpgradeSuccess: "userUpgradeSuccess",
+  userUpgradeFail: "userUpgradeFail",
+  clearUpgarde: "clearUpgarde",
+};
+
+export const premiumUserConst = {
+  premiumUserReques: "premiumUserReques",
+  premiumUserSuccess: "premiumUserSuccess",
+  premiumUserFail: "premiumUserFail",
 };
 
 //carear constanse

@@ -94,7 +94,7 @@ const AfterBuyerLogin = () => {
             Here you find the Organizations name with REHAB Membership number
             [Source: www.rehab-bd.rg]
           </p>
-          {list.length > 0 ? (
+          {/* {list.length > 0 ? (
             <div className="mb-135">
               <Table striped bordered hover className="mt-5 ">
                 <thead>
@@ -123,7 +123,10 @@ const AfterBuyerLogin = () => {
                 </button>
               </div>
             </div>
-          ) : null}
+          ) : null} */}
+          <div className="text-center">
+            <a href="https://www.rehab-bd.org/index.php?page=members" target="_blank" rel="noreferrer" className="text-white bg-primary  px-2  text-decoration">REHAB Member List</a>
+          </div>
         
       </div>
     </div>

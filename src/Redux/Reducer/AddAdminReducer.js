@@ -1,4 +1,5 @@
 import { adminConstanse } from "../Constanse";
+import { adminUserDelet } from "./../Constanse";
 
 const AdminState = {
   loading: false,
@@ -33,6 +34,24 @@ export const adminStore = (state = AdminState, action) => {
         success: action.payload.message,
       };
     case adminConstanse.addNewAdminFail:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload.error,
+        success: "",
+      };
+    case adminUserDelet.userDeletRequest:
+      return {
+        ...state,
+        loading: false,
+        error: null,
+        success: action.payload,
+      };
+    case adminUserDelet.userDeletSuccess:
+      return{
+
+      };
+    case adminUserDelet.userDeletFail:
       return {
         ...state,
         loading: false,

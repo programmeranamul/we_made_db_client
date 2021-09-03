@@ -23,7 +23,7 @@ const menuItem = [
     path: "/how-to-started",
   },
   {
-    text: "Why join us",
+    text: "Why join with us",
     path: "/why-join-us",
   },
   {
