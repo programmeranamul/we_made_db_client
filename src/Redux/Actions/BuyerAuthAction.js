@@ -6,8 +6,6 @@ import {
 } from "./../Constanse";
 import axios from "axios";
 
-
-
 //buyer singup
 export const buyerSingup = (datas) => {
   return async (dispatch) => {
@@ -41,13 +39,15 @@ export const buyerSingup = (datas) => {
   };
 };
 
-
 //buyer account activation
 export const applyActivation = (data) => {
   return async (dispatch) => {
     dispatch({ type: buyserAuthConstanse.buyerSingupRequest });
     try {
-      const res = await axios.post("https://ancient-dawn-67469.herokuapp.com/joinin", data);
+      const res = await axios.post(
+        "https://ancient-dawn-67469.herokuapp.com/joinin",
+        data
+      );
       dispatch({
         type: activateEmail.activateEmailSuccessConstanse,
         payload: "Go to your email and active your account",
@@ -59,8 +59,21 @@ export const applyActivation = (data) => {
           error: e.response.data.error,
         },
       });
-    } 
+    }
   };
+};
+
+export const checkPrimum = async (email) => {
+  try {
+    const res = await axios.post("https://ancient-dawn-67469.herokuapp.com/check/premium", {
+      email,
+    });
+    localStorage.setItem("proToken", res.data.upgradeUser.token);
+    localStorage.setItem("proEmail", res.data.upgradeUser.email);
+  } catch (e) {
+    localStorage.removeItem("proToken");
+    localStorage.removeItem("proEmail");
+  }
 };
 
 //buyer login
@@ -68,9 +81,13 @@ export const login = (datas) => {
   return async (dispatch) => {
     dispatch({ type: logedInConstanse.logedInRequest });
     try {
-      const res = await axios.post("https://ancient-dawn-67469.herokuapp.com/login", datas);
-      console.log(res );
+      const res = await axios.post(
+        "https://ancient-dawn-67469.herokuapp.com/login",
+        datas
+      );
+
       const { buyer, token, message } = res.data;
+
       localStorage.setItem("user", JSON.stringify(buyer));
       localStorage.setItem("token", token);
       dispatch({
@@ -81,6 +98,7 @@ export const login = (datas) => {
           message: "Logedin Success",
         },
       });
+      // await checkPrimum(buyer.email);
     } catch (e) {
       dispatch({
         type: logedInConstanse.logedInFail,
@@ -97,7 +115,7 @@ export const ifLogedIN = () => {
   return async (dispatch) => {
     console.log("object logedin");
     const token = localStorage.getItem("token");
-    const buyer = JSON.parse(localStorage.getItem("user"));    
+    const buyer = JSON.parse(localStorage.getItem("user"));
 
     if (token && buyer) {
       try {

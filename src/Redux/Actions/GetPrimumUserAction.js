@@ -8,7 +8,7 @@ export const getPrimumMember = () => {
     dispatch({ type: premiumUserConst.premiumUserReques });
     try {
       const res = await axios.get(
-        "http://localhost:8080/admin/user/upgrate/all",
+        "https://ancient-dawn-67469.herokuapp.com/admin/user/upgrate/all",
         {
           headers: {
             Authorization: `bearer ${token}`,

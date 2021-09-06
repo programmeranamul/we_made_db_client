@@ -1,20 +1,10 @@
 .get-start-banner {
-  /* clip-path: polygon(0 0, 100% 0%, 100% 80%, 0 96%); */
   background: url("../../Assest/Image/howToGetStated.jpg");
   background-position: center;
   background-size: cover;
   height: 83vh;
   position: relative;
 }
-
-/* .get-start-banner::before {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  
-} */
 
 .gsb-text {
   margin-top: -80px;
@@ -37,7 +27,6 @@
 .sgbBox {
   width: 140px;
   height: 140px;
-  /* border: 1px solid; */
   border-radius: 50%;
   text-align: center;
   display: flex;

@@ -1,20 +1,24 @@
 import React, { useState } from "react";
-import { sellerDetailList } from "./SellerInitalData";
 import buyerAvatar from "../../Images/buyerAvatar.png";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { checkPrimum } from "./../../Redux/Actions/BuyerAuthAction";
+import { checkVerifyP } from "./../../Redux/Actions/VerifyPrimum";
+import MyModal from "./../../Components/Modeal/Modal";
 
 const SellerList = () => {
+  const sellerPost = useSelector((state) => state?.allPostReducer?.postList) 
+
+  //pagination
+  
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(9);
-  const [sellerDetails, setSellerDetails] = useState(sellerDetailList);
-
-  //get current page
+  const [sellerDetails] = useState(sellerPost);
+ 
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = sellerDetails.slice(indexOfFirstPost, indexOfLastPost);
 
-  //page number
   const pageNumbers = [];
   for (let i = 1; i <= Math.ceil(sellerDetails.length / postsPerPage); i++) {
     pageNumbers.push(i);
@@ -27,6 +31,35 @@ const SellerList = () => {
     history.replace("/buyer/1");
   }
 
+  const [contactUser, setContactUser] = useState(null);
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+
+  checkPrimum(buyerAutyh.user.email);
+
+  const handelContact = (userDetails) => {
+    const proToken = localStorage.getItem("proToken");
+    if (proToken) {
+      checkVerifyP(proToken);
+      setContactUser(userDetails);
+      setShow(true);
+    } else {
+      history.push("/plans");
+    }
+  };
+
+  const randerModal = () => {
+    if (contactUser) {
+      return (
+        <MyModal
+          show={show}
+          handleClose={handleClose}
+          name={contactUser.name}
+        ></MyModal>
+      );
+    }
+  };
+
   return (
     <div>
       <div className="container">
@@ -37,7 +70,10 @@ const SellerList = () => {
             </h5>
             <div className="row">
               {currentPosts.map((item) => (
-                <div className="col-md-4 col-sm-6 p-4">
+                <div
+                  className="col-md-4 col-sm-6 p-4 mb-4 mb-md-0 cursor-pointer"
+                  onClick={() => handelContact(item)}
+                >
                   <div className="card p-4 rounded-9 text-center">
                     <img
                       className="w-75px buyerCardLogo"
@@ -46,11 +82,11 @@ const SellerList = () => {
                     />
                     <h5 className="fw-700">{item.name}</h5>
                     <p className="m-0">
-                      <b>{item.profession}</b>
+                      <b>{item.work}</b>
                     </p>
                     <p className="m-0 fw-600">{item.location}</p>
                     <p className="m-0 fw-600">{item.size}</p>
-                    <p className="m-0 fw-600">{item.schedule}</p>
+                    <p className="m-0 fw-600">{item.date}</p>
                     <p className="m-0 mt-1 fw-600 text-sky">Contact</p>
                   </div>
                 </div>
@@ -59,7 +95,7 @@ const SellerList = () => {
           </div>
         ) : (
           <h5 className="mb-4 pb-2 ">
-            <b>No Seller Found !!</b>
+            <b>No Buyer Found</b>
           </h5>
         )}
 
@@ -87,6 +123,7 @@ const SellerList = () => {
           </div>
         ) : null}
       </div>
+      {randerModal()}
     </div>
   );
 };

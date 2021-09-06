@@ -7,7 +7,9 @@ import { Alert } from "react-bootstrap";
 import { login } from "../../Redux/Actions/BuyerAuthAction";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
-import "./Login.css"
+import "./Login.css";
+import { checkVerify } from "./../../Redux/Actions/VerifyPrimum";
+import { checkPrimum } from './../../Redux/Actions/BuyerAuthAction';
 
 const Login = () => {
   const {
@@ -25,7 +27,8 @@ const Login = () => {
   if (buyerAutyh.authenticate && buyerAutyh.user.type === "Buyer") {
     history.replace("/buyer/1");
   }
-  if (buyerAutyh.authenticate && buyerAutyh.user.type === "Seller") {
+  if (buyerAutyh.authenticate && buyerAutyh.user.type === "Seller") {    const uemail = buyerAutyh.user.email;
+    
     history.replace("/seller/1");
   }
   if (buyerAutyh.authenticate && buyerAutyh.user.type === "admin") {
@@ -71,7 +74,7 @@ const Login = () => {
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
                 <Form.Control
-                  type="text"
+                  type="password"
                   placeholder="Password"
                   {...register("password", { required: true, minLength: 4 })}
                 />
@@ -87,7 +90,7 @@ const Login = () => {
                 )}
               </Form.Group>
 
-              <button className="btn bg-orange fw-600 text-white"  type="submit">
+              <button className="btn bg-orange fw-600 text-white" type="submit">
                 Login{"  "}
                 {buyerAutyh.loading && (
                   <FontAwesomeIcon icon={faSpinner} className="fa-spin" />

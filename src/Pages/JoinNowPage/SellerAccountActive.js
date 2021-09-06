@@ -1,14 +1,13 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+
 import { activeSellerAccoutn } from "../../Redux/Actions/SellerAuthAction";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 const SellerAccountActive = () => {
   const dispatch = useDispatch();
-  let history = useHistory();
   let { token } = useParams();
 
   const userStore = useSelector((state) => state.buyerAuthReducer);

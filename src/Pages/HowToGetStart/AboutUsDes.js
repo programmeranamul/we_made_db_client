@@ -14,7 +14,7 @@ const AboutUsDes = () => {
           only trade organization of Real Estate Developers in Bangladesh.
         </p>
         <p className="text-align-justify">
-         <a className="text-white" href="http://www.squarefeetbd.com/" target="_blank"> www.squarefeetbd.com</a> is the largest B2C sourcing platform for Real
+         <a className="text-white" rel="noreferrer" href="http://www.squarefeetbd.com/" target="_blank"> www.squarefeetbd.com</a> is the largest B2C sourcing platform for Real
           Estate projects in Bangladesh. We have been working on it since last
           one and half years. Eventually, we landed here after entire market
           research and conversation with buyers. We are right here to make the

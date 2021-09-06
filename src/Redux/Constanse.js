@@ -55,5 +55,21 @@ export const premiumUserConst = {
   premiumUserFail: "premiumUserFail",
 };
 
-//carear constanse
-export const careareConstanse = {};
+//post constanse
+export const postConst = {
+  postRequest: "postRequest",
+  postSuccess: "postSuccess",
+  postFail: "postFail",
+};
+
+export const allPostConst = {
+  requestAllPost: "requestAllPost",
+  successAllPost: "successAllPost",
+  failAllPost: "failAllPost",
+};
+
+export const allByerPOstConst = {
+  requestAllBuyerPost: "requestAllBuyerPost",
+  successAllBuyerPost: "successAllBuyerPost",
+  failAllBuyerPost: "failAllBuyerPost",
+}

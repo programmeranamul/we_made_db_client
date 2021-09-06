@@ -1,5 +1,4 @@
 import React from "react";
-import AddAdmin from "./AddAdmin";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Table } from "react-bootstrap";

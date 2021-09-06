@@ -15,7 +15,7 @@ import JoinType from "./Pages/JoinNowPage/JoinType";
 import PrivetPage from "./Pages/PrivetPage/PrivetPage";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { ifLogedIN } from "./Redux/Actions/BuyerAuthAction";
+import { checkPrimum, ifLogedIN } from "./Redux/Actions/BuyerAuthAction";
 import AfterBuyerLogin from "./Pages/AfterBuyerLogIn/AfterBuyerLogin";
 import AccountActivate from "./Pages/JoinNowPage/AccountActivate";
 import BuyerCompanyListPage from "./Pages/AfterBuyerLogIn/BuyerCompanyListPage";
@@ -28,22 +28,29 @@ import HowIsItWork from "./Pages/HowIsItWork/HowIsItWork";
 import MemberShipPlan from "./Pages/MemberShipPlan/MemberShipPlan";
 import PageNotFount from "./Pages/PageNotFount/PageNotFount";
 import AdminPage from "./Pages/AdminPage/AdminPage";
-import PrivacyPolicy from './Pages/PrivacyPolicy/PrivacyPolicy';
+import PrivacyPolicy from "./Pages/PrivacyPolicy/PrivacyPolicy";
 import TermsCondition from "./Pages/TermsCondition/TermsCondition";
-import Imprint from './Pages/Imprint/Imprint';
-// import { Swiper, SwiperSlide } from "swiper/react";
+import Imprint from "./Pages/Imprint/Imprint";
+import { checkVerifyP } from "./Redux/Actions/VerifyPrimum";
 
 axios.defaults.withCredentials = true;
 
 function App() {
   const buyerAutyh = useSelector((state) => state.buyerAuthReducer);
   const dispatch = useDispatch();
+  const proToken = localStorage.getItem("proToken");
 
   useEffect(() => {
     if (!buyerAutyh.authenticate) {
       dispatch(ifLogedIN());
     }
-  }, []);
+    if (buyerAutyh.user.email) {
+      checkPrimum(buyerAutyh.user.email);
+    }
+    if (proToken) {
+      checkVerifyP(proToken);
+    }
+  }, [buyerAutyh.authenticate, dispatch, proToken, buyerAutyh.user.email]);
 
   return (
     <Router>

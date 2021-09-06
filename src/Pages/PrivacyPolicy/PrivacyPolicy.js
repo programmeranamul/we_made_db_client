@@ -1,5 +1,4 @@
 import React from "react";
-import "./PrivacyPolicy.css";
 
 const datas = [
   "device’s IP address (captured and stored in an anonymized format)",

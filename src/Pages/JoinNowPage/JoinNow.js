@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import "./JoinNow.css";
-import { Form, Button } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";

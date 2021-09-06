@@ -63,8 +63,7 @@ const ContactUs = () => {
       <div className="container pb-4">
         <div className="col-md-9 col-lg-5 ms-auto border rounded bg-white px-4 py-4">
           <h5 className="mx-auto fw-700 text-sky">Conact Us</h5>
-          <Form className="mt-4" onSubmit={sendEmail}>
-            {/* <Form className="mt-4" onSubmit={sendEmail}> */}
+          <Form className="mt-4" onSubmit={sendEmail}>            
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Name</Form.Label>
               <Form.Control

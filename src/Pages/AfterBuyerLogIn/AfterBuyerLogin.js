@@ -1,8 +1,10 @@
-import React from "react";
-import { Table } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import { useSelector } from "react-redux";
-import "./AfterBuyerLogin.css"
+import { useSelector, useDispatch } from "react-redux";
+import { getAllBuyerPost } from "./../../Redux/Actions/PostAction";
+import "./AfterBuyerLogin.css";
+import { checkVerifyP } from "../../Redux/Actions/VerifyPrimum";
+import MyModal from "../../Components/Modeal/Modal";
 
 const instracTion = [
   "Location of the property.",
@@ -18,56 +20,53 @@ const instracTion = [
   "Clear concept of hidden and additional charges.",
 ];
 
-const list = [
-  {
-    MembershipNo: "778 / 2010",
-    companyName: "7-One Properties Limited",
-  },
-  {
-    MembershipNo: "1117/2011",
-    companyName: "A B Developers Ltd",
-  },
-  {
-    MembershipNo: "1547/2018",
-    companyName: "A Class Limited",
-  },
-  {
-    MembershipNo: "1443/2016",
-    companyName: "A G Green Property Development Limited",
-  },
-  {
-    MembershipNo: "879/2010",
-    companyName: "A-Class Holdings Ltd",
-  },
-  {
-    MembershipNo: "577/2009",
-    companyName: "A. K. Housing Ltd",
-  },
-  {
-    MembershipNo: "1095/2011",
-    companyName: "A. K. Real Estate Ltd",
-  },
-  {
-    MembershipNo: "1505/2017",
-    companyName: "AAA Holdings Limited",
-  },
-  {
-    MembershipNo: "1474/2016",
-    companyName: "Aakash Developments Ltd",
-  },
-  {
-    MembershipNo: "1512/2017",
-    companyName: "Aakash Real Estate Ltd",
-  },
-];
 
 const AfterBuyerLogin = () => {
   const history = useHistory();
   const buyerAutyh = useSelector((state) => state.buyerAuthReducer);
+  const buyerPost = useSelector((state) => state?.allBuyerPostStore?.postList);
+  const [contactUser, setContactUser] = useState(null);
+  const dispatch = useDispatch();
+ 
+
 
   if (buyerAutyh.user.type !== "Buyer") {
     history.replace("/");
   }
+
+  //modal open and close
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+
+  //handel contact
+  const handelContact = (userDetails) => {
+    const proToken = localStorage.getItem("proToken");
+    if (proToken) {
+      checkVerifyP(proToken);
+      setContactUser(userDetails);
+      setShow(true);
+    } else {
+      history.push("/plans");
+    }
+    
+  };
+
+  //rander modal
+  const randerModal = () => {
+    if (contactUser) {
+      return (
+        <MyModal
+          show={show}
+          handleClose={handleClose}
+          name={contactUser.name}
+        ></MyModal>
+      );
+    }
+  };
+
+  useEffect(() => {
+    dispatch(getAllBuyerPost());
+  }, []);
 
   return (
     <div className="mt-3 mb-5">
@@ -86,49 +85,55 @@ const AfterBuyerLogin = () => {
           </ul>
         </div>
       </div>
-    
-        <div className="mt-5 container">
-          <p>
-            <b>REHAB (Real Estate & Housing Association of Bangladesh)</b> is
-            the only trade organization of Real Estate developers in Bangladesh.
-            Here you find the Organizations name with REHAB Membership number
-            [Source: www.rehab-bd.rg]
-          </p>
-          {/* {list.length > 0 ? (
-            <div className="mb-135">
-              <Table striped bordered hover className="mt-5 ">
-                <thead>
-                  <tr>
-                    <th className="bg-primary text-white">Sr.</th>
-                    <th className="text-black bg-orange ">REHAB Membership No</th>
-                    <th className="bg-primary text-white">Company Name</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {list.map((item, index) => (
-                    <tr className="fw-600" key={item.MembershipNo}>
-                      <td className="text-center">{index + 1}</td>
-                      <td className="fw-600">{item.MembershipNo}</td>
-                      <td>{item.companyName}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </Table>{" "}
-              <div>
-                <button
-                  className="btn-sm btn btn-primary mt-3"
-                  onClick={() => history.push("/buyer/list")}
-                >
-                  Show All
-                </button>
+
+      <div className="mt-5 container">
+        <p>
+          <b>REHAB (Real Estate & Housing Association of Bangladesh)</b> is the
+          only trade organization of Real Estate developers in Bangladesh. Here
+          you find the Organizations name with REHAB Membership number [Source:
+          www.rehab-bd.rg]
+        </p>
+
+        <div className="text-center">
+          <a
+            href="https://www.rehab-bd.org/index.php?page=members"
+            target="_blank"
+            rel="noreferrer"
+            className="text-white bg-primary  px-2  text-decoration"
+          >
+            REHAB Member List
+          </a>
+        </div>
+        {buyerPost.length > 0 ? (
+          <div className="mb-135 mt-5">
+            <div>
+              <div className="row">
+                {buyerPost.slice(0,3).map((post) => (
+                  <div className="col-md-4 mb-4 mb-md-0 px-4">
+                    <div className="text-center rounded border cursor-pointer" onClick={() => handelContact(post)}>
+                      <div className="h-200 cover"><img src={post.image} className="w-100 h-100" alt="" /></div>
+                      <div className="mt-3 mb-1">
+                      <p className="mb-1"><b>{post.location}</b></p>
+                      <p className="mb-1"><b>{post.size}</b></p>
+                      <p className="text-primary"><b>Contact</b></p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-          ) : null} */}
-          <div className="text-center">
-            <a href="https://www.rehab-bd.org/index.php?page=members" target="_blank" rel="noreferrer" className="text-white bg-primary  px-2  text-decoration">REHAB Member List</a>
+            <div>
+              <button
+                className="btn-sm btn btn-primary mt-3"
+                onClick={() => history.push("/buyer/list")}
+              >
+                Show All
+              </button>
+            </div>
           </div>
-        
+        ) : null}
       </div>
+      {randerModal()}
     </div>
   );
 };

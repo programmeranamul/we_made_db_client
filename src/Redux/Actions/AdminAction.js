@@ -65,7 +65,7 @@ export const deletUser = (email) => {
     dispath({ type: adminUserDelet.userDeletRequest });
     try {
       const res = await axios.post(
-        "http://localhost:8080/admin/user/delet",
+        "https://ancient-dawn-67469.herokuapp.com/admin/user/delet",
         email,
         {
           headers: {
@@ -94,7 +94,7 @@ export const upgradeForOneMonth = (email) => {
     dispath({ type: userUpgrafeConst.userUpgradeRequest });
     try {
       const res = await axios.post(
-        "http://localhost:8080/admin/user/upgrate/1",
+        "https://ancient-dawn-67469.herokuapp.com/admin/user/upgrate/1",
         email,
         {
           headers: {
@@ -121,7 +121,7 @@ export const upgradeForThreeMonth = (email) => {
     dispath({ type: userUpgrafeConst.userUpgradeRequest });
     try {
       const res = await axios.post(
-        "http://localhost:8080/admin/user/upgrate/3",
+        "https://ancient-dawn-67469.herokuapp.com/admin/user/upgrate/3",
         email,
         {
           headers: {
@@ -148,7 +148,7 @@ export const upgradeForFree = (email) => {
     dispath({ type: userUpgrafeConst.userUpgradeRequest });
     try {
       const res = await axios.post(
-        "http://localhost:8080/admin/user/upgrate/free",
+        "https://ancient-dawn-67469.herokuapp.com/admin/user/upgrate/free",
         email,
         {
           headers: {

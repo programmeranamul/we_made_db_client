@@ -1,6 +1,4 @@
 import React from "react";
-import { Container } from "react-bootstrap";
-import test from "../../Images/harmen-jelle-van-mourik-0yfWDwHOB0g-unsplash.jpg";
 import { useHistory } from "react-router-dom";
 
 const bannerText = [

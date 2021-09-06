@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { Form, Button } from "react-bootstrap";
+import { Form} from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { useSelector } from "react-redux";
@@ -9,9 +9,7 @@ import "./Carear.css";
 const Carear = () => {
   const {
     register,
-    handleSubmit,
-    watch,
-
+    handleSubmit,  
     formState: { errors },
   } = useForm();
 

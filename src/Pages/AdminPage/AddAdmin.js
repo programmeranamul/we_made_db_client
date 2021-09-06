@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { Alert } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
-import { Form, Button } from "react-bootstrap";
+import { Form} from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
@@ -157,8 +157,7 @@ const AddAdmin = () => {
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Confirm Password</Form.Label>
-              <Form.Control
-                type="text"
+              <Form.Control              
                 type="password"
                 placeholder="Confirm Password"
                 {...register("confarmPassword", {

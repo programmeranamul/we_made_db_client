@@ -4,15 +4,7 @@ import { faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
 import "./MembarShipPlan.css"
 
 const MemberShipData = [
-  //   {
-  //     type: "Free",
-  //     price: "BDT 0.00",
-  //     service: [
-  //       "Access to visit the buyer list only.",
-  //       "connect with Marketing Qualified Lead (MQL) for further business communication.",
-  //     ],
-  //     paymentSystem: ["Free"],
-  //   },
+ 
   {
     type: "Free",
     price: "BDT. 00.00",

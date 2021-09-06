@@ -9,8 +9,6 @@ import {
   upgradeForOneMonth,
   upgradeForThreeMonth
 } from "./../../Redux/Actions/AdminAction";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { Alert } from "react-bootstrap";
 
 const UpgradeUser = () => {
@@ -22,11 +20,7 @@ const UpgradeUser = () => {
   const user = AdminStore?.userList?.find((item) => item.email === email);
   if (!user) {
     history.replace("/admin/v7/user");
-  }
-
-  const handelDelet = () => {
-    dispatch(deletUser(user));
-  };
+  } 
 
   const upgradeOneMonth = () => {
     dispatch(upgradeForOneMonth(user));
