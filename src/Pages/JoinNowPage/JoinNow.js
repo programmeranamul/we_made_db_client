@@ -53,9 +53,17 @@ const JoinNow = () => {
   }
 
   return (
-    <div className={`mt-4 bg-cover ${type === "Buyer" ? "buyer_login" : "seller_login"} py-5`}>
+    <div
+      className={`mt-4 bg-cover ${
+        type === "Buyer" ? "buyer_login" : "seller_login"
+      } py-5`}
+    >
       <div className="container pb-5 pt-3">
-        <div className={`col-md-6 border rounded px-4 py-4 bg-white ${type === "Buyer" ? "ms-auto" : "me-auto"}`}>
+        <div
+          className={`col-md-6 border rounded px-4 py-4 bg-white ${
+            type === "Buyer" ? "ms-auto" : "me-auto"
+          }`}
+        >
           <h4 className="text-center text-sky join-us-title pb-4">
             Start your journey to meet the {type}
           </h4>
@@ -82,26 +90,33 @@ const JoinNow = () => {
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Cell</Form.Label>
               <Form.Control
-                type="text"
+                type="number"
                 placeholder="Cell Number"
-                {...register("cell", { required: true, pattern: /^[0-9]/ })}
+                {...register("cell", {
+                  required: true,
+                  minLength: 11,
+                  maxLength: 11,
+                })}
               />
               {errors.cell?.type === "required" && (
                 <span className="text-danger mt-2 d-block">
                   This field is required
                 </span>
               )}
-              {errors.cell?.type === "pattern" && (
+              {errors.cell?.type === "minLength" && (
                 <span className="text-danger mt-2 d-block">
-                  Please Enter Only Number
+                  Enter a valid number
+                </span>
+              )}
+              {errors.cell?.type === "maxLength" && (
+                <span className="text-danger mt-2 d-block">
+                  Enter a valid number
                 </span>
               )}
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>
-                Email
-              </Form.Label>
+              <Form.Label>Email</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Enter Email"
@@ -160,10 +175,24 @@ const JoinNow = () => {
               </div>
             ) : null}
 
-            <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Group className="mb-3">
+              <Form.Label>Referral Code</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Referral Code"
+                {...register("referral")}
+              />
+              {errors.referral?.type === "required" && (
+                <span className="text-danger mt-2 d-block">
+                  This field is required
+                </span>
+              )}
+            </Form.Group>
+
+            <Form.Group className="mb-3">
               <Form.Label>Password</Form.Label>
               <Form.Control
-                type="text" type="password"
+                type="password"
                 placeholder="Password"
                 {...register("password", { required: true, minLength: 4 })}
               />
@@ -174,14 +203,14 @@ const JoinNow = () => {
               )}
               {errors.password?.type === "minLength" && (
                 <span className="text-danger mt-2 d-block">
-                  Name Must be more then 3 charecter
+                  Password Must be more then 3 charecter
                 </span>
               )}
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Confirm Password</Form.Label>
               <Form.Control
-                type="text" type="password"
+                type="password"
                 placeholder="Confirm Password"
                 {...register("confarmPassword", {
                   required: true,

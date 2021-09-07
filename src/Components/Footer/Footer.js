@@ -1,6 +1,15 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 import "./Footer.css";
+import {
+  fab,
+  faFacebook,
+  faInstagram,
+  faLinkedin,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+//<FontAwesomeIcon icon="coffee" />
 
 const footerItems = [
   {
@@ -40,6 +49,10 @@ const footerItems = [
         text: "How to get started",
         path: "/how-to-started",
       },
+      {
+        text: "Affiliate Marketer",
+        path: "/affiliate-marketer",
+      },
     ],
   },
   {
@@ -57,6 +70,12 @@ const footerItems = [
         text: "Privacy Policy",
         path: "/privacy-policy",
       },
+    ],
+    social: [
+      { icon: faFacebook, link: "#" },
+      { icon: faYoutube, link: "#" },
+      { icon: faLinkedin, link: "#" },
+      { icon: faInstagram, link: "#" },
     ],
   },
 ];
@@ -91,6 +110,12 @@ const Footer = () => {
                         </Link>
                       </p>
                     ))}
+                    {footerItem.social &&
+                      footerItem.social.map((item, index) => (
+                        <a href={item.link} className="social-icon" key={index}>
+                          <FontAwesomeIcon icon={item.icon} />
+                        </a>
+                      ))}
                   </div>
                 </div>
               </div>

@@ -51,6 +51,8 @@ const AfterSellerLoginPage = () => {
   useEffect(() => {
     dispatch(getSellerAllPost());
   }, [])
+
+ 
  
   const randerModal = () => {
     if (contactUser) {
@@ -58,7 +60,8 @@ const AfterSellerLoginPage = () => {
         <MyModal
           show={show}
           handleClose={handleClose}
-          name={contactUser.name}
+          contactOption={contactUser}
+         
         ></MyModal>
       );
     }

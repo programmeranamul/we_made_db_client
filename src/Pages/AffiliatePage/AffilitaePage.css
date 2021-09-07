@@ -1,0 +1,12 @@
+.affiliatePage {
+  background: url("../../Assest/Image/afB.jpeg");
+  background-position: center;
+  background-size: cover;
+  height: 83vh;
+  position: relative;
+  width: 100%;
+}
+
+.about-us-container {
+  padding: 40px 0;
+}

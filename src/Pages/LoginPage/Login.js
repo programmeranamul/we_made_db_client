@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Button } from "react-bootstrap";
+import { Form} from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useHistory, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -8,8 +8,6 @@ import { login } from "../../Redux/Actions/BuyerAuthAction";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import "./Login.css";
-import { checkVerify } from "./../../Redux/Actions/VerifyPrimum";
-import { checkPrimum } from './../../Redux/Actions/BuyerAuthAction';
 
 const Login = () => {
   const {

@@ -17,6 +17,7 @@ const SellerPost = () => {
   const [show, setShow] = useState(false);
   const allPostStore = useSelector((state) => state.allPostReducer);
   const dispatch = useDispatch();
+  
 
   const handleClose = () => {
     setShow(false);
@@ -37,6 +38,21 @@ const SellerPost = () => {
   const deletPost = (id) => {
     dispatch(deletSellerPost(id));
   };
+
+
+    //pagination  
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postsPerPage] = useState(20);
+   
+    const indexOfLastPost = currentPage * postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    const currentPosts = allPostStore?.postList?.slice(indexOfFirstPost, indexOfLastPost);
+  
+    const pageNumbers = [];
+    for (let i = 1; i <= Math.ceil(allPostStore?.postList?.length / postsPerPage); i++) {
+      pageNumbers.push(i);
+    }
+  
   return (
     <div>
       <div>
@@ -55,7 +71,7 @@ const SellerPost = () => {
           </Alert>
         ) : (
           <div className="pt-5">
-            {allPostStore?.postList.length > 0 ? (
+            {currentPosts.length > 0 ? (
               <Table striped bordered hover className="text-white">
                 <thead>
                   <tr>
@@ -64,7 +80,7 @@ const SellerPost = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {allPostStore?.postList.map((post) => (
+                  {currentPosts.map((post) => (
                     <tr
                       key={post.name}
                       className="cursor-pointer text-white"
@@ -81,6 +97,31 @@ const SellerPost = () => {
             )}
           </div>
         )}
+        {allPostStore?.postList.length > postsPerPage ? (
+          <div className=" pb-3 pt-3">
+            <nav>
+              <ul className="pagination flex-wrap d-flex justify-content-center">
+                {pageNumbers.map((number) => (
+                  <li
+                    key={number}
+                    className={`page-item cursor-pointer ${
+                      number == currentPage ? "active" : ""
+                    } `}
+                  >
+                    <a
+                      onClick={() => setCurrentPage(number)}
+                      className={`page-link ${
+                        number == currentPage ? "bg-danger" : ""
+                      } `}
+                    >
+                      {number}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+        ) : null}
       </div>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>

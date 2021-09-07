@@ -1,21 +1,26 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { Form} from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { useSelector } from "react-redux";
 import "./Carear.css";
+import axios from "axios";
 
 const Carear = () => {
   const {
     register,
-    handleSubmit,  
+    handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
 
   const carearStore = useSelector((state) => state.carearReducer);
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+    console.log("data", data);
+    await axios.post("https://ancient-dawn-67469.herokuapp.com/carrer", data);
+    reset();
+    alert("We will contact with you.");
   };
   return (
     <div className="carear-wrapper py-5">
@@ -23,13 +28,15 @@ const Carear = () => {
         <div className="row">
           <div className="col-md-6 d-flex">
             <div>
-            <h2 className="text-center bg-primary text-white d-inline-block p-2 rounded">Careers</h2>
-            <h6 className="mb-4 bg-orange d-inline-block p-2 rounded text-justify">
-              We will offer exciting career opportunities soon. Whether it's the
-              diverse challenges daily within the job or the large scope for
-              applying creativity in your work. There are enough reasons to
-              join our motivated team.
-            </h6>
+              <h2 className="text-center bg-primary text-white d-inline-block p-2 rounded">
+                Careers
+              </h2>
+              <h6 className="mb-4 bg-orange d-inline-block p-2 rounded text-justify">
+                We will offer exciting career opportunities soon. Whether it's
+                the diverse challenges daily within the job or the large scope
+                for applying creativity in your work. There are enough reasons
+                to join our motivated team.
+              </h6>
             </div>
           </div>
           <div className="col-md-6">
@@ -55,9 +62,7 @@ const Carear = () => {
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                  <Form.Label>
-                    Email
-                  </Form.Label>
+                  <Form.Label>Email</Form.Label>
                   <Form.Control
                     type="text"
                     placeholder="Enter Email"
@@ -81,29 +86,43 @@ const Carear = () => {
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                   <Form.Label>Cell</Form.Label>
                   <Form.Control
-                    type="text"
+                    type="number"
                     placeholder="Phone"
-                    {...register("cell", { required: true, pattern: /^[0-9]/ })}
+                    {...register("number", {
+                      required: true,
+                      minLength: 11,
+                      maxLength: 11,
+                    })}
                   />
-                  {errors.cell?.type === "required" && (
+                  {errors.number?.type === "required" && (
                     <span className="text-danger mt-2 d-block">
                       This field is required
                     </span>
                   )}
-                  {errors.cell?.type === "pattern" && (
+                  {errors.number?.type === "minLength" && (
                     <span className="text-danger mt-2 d-block">
-                      Please Enter Only Number
+                      Enter a valid number
+                    </span>
+                  )}
+                  {errors.number?.type === "maxLength" && (
+                    <span className="text-danger mt-2 d-block">
+                      Enter a valid number
                     </span>
                   )}
                 </Form.Group>
 
-                <Form.Group controlId="formFile" className="mb-3">
-                  <Form.Label>Upload your resume</Form.Label>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                  <Form.Label>Resume</Form.Label>
                   <Form.Control
-                    type="file"
-                    placeholder="Upload your resume"
-                    required
+                    type="text"
+                    placeholder="Resume Link"
+                    {...register("resume", { required: true })}
                   />
+                  {errors.resume?.type === "required" && (
+                    <span className="text-danger mt-2 d-block">
+                      This field is required
+                    </span>
+                  )}
                 </Form.Group>
 
                 <button

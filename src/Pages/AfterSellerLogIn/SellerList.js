@@ -9,8 +9,7 @@ import MyModal from "./../../Components/Modeal/Modal";
 const SellerList = () => {
   const sellerPost = useSelector((state) => state?.allPostReducer?.postList) 
 
-  //pagination
-  
+  //pagination  
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(9);
   const [sellerDetails] = useState(sellerPost);
@@ -54,7 +53,8 @@ const SellerList = () => {
         <MyModal
           show={show}
           handleClose={handleClose}
-          name={contactUser.name}
+          contactOption={contactUser}
+         
         ></MyModal>
       );
     }

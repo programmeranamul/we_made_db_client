@@ -63,7 +63,7 @@ const BuyerCompanyListPage = () => {
         <MyModal
           show={show}
           handleClose={handleClose}
-          name={contactUser.name}
+          contactOption={contactUser}         
         ></MyModal>
       );
     }
@@ -88,6 +88,7 @@ const BuyerCompanyListPage = () => {
                         <div className="mt-3 mb-1">
                         <p className="mb-1"><b>{post.location}</b></p>
                         <p className="mb-1"><b>{post.size}</b></p>
+                        <p className="mb-1"><b>{post.price}</b></p>
                         <p className="text-primary"><b>Contact</b></p>
                         </div>
                       </div>
@@ -119,7 +120,9 @@ const BuyerCompanyListPage = () => {
             </ul>
           </nav>
         </div>
+        {randerModal()}
       </div>
+
     </div>
   );
 };

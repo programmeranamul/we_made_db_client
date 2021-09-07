@@ -51,6 +51,7 @@ const AfterBuyerLogin = () => {
     
   };
 
+  
   //rander modal
   const randerModal = () => {
     if (contactUser) {
@@ -58,7 +59,8 @@ const AfterBuyerLogin = () => {
         <MyModal
           show={show}
           handleClose={handleClose}
-          name={contactUser.name}
+          contactOption={contactUser}
+         
         ></MyModal>
       );
     }
@@ -115,6 +117,7 @@ const AfterBuyerLogin = () => {
                       <div className="mt-3 mb-1">
                       <p className="mb-1"><b>{post.location}</b></p>
                       <p className="mb-1"><b>{post.size}</b></p>
+                      <p className="mb-1"><b>{post.price}</b></p>
                       <p className="text-primary"><b>Contact</b></p>
                       </div>
                     </div>

@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
@@ -32,7 +32,7 @@
 .fs-50 {
   font-size: 36px !important;
 }
-.fs-17{
+.fs-17 {
   font-size: 17px !important;
 }
 
@@ -92,16 +92,15 @@
   text-align: justify !important;
 }
 
-.h-200{
+.h-200 {
   height: 200px !important;
 }
-.cover{
+.cover {
   object-fit: cover !important;
 }
-.h-100{
+.h-100 {
   height: 100% !important;
 }
-
 
 [class^="number-slide"],
 [class*=" number-slide"] {
@@ -114,4 +113,11 @@
   font-weight: 500;
   height: 150px;
   max-height: 100vh;
+}
+
+.social-icon {
+  display: inline-block !important;
+  padding: 0 16px 0 0;
+  font-size: 18px;
+  color: black !important;
 }

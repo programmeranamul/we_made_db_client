@@ -32,6 +32,7 @@ import PrivacyPolicy from "./Pages/PrivacyPolicy/PrivacyPolicy";
 import TermsCondition from "./Pages/TermsCondition/TermsCondition";
 import Imprint from "./Pages/Imprint/Imprint";
 import { checkVerifyP } from "./Redux/Actions/VerifyPrimum";
+import AffiliatePage from "./Pages/AffiliatePage/AffiliatePage";
 
 axios.defaults.withCredentials = true;
 
@@ -91,6 +92,9 @@ function App() {
         </Route>
         <Route path="/plans">
           <MemberShipPlan />
+        </Route>
+        <Route path="/affiliate-marketer">
+          <AffiliatePage />
         </Route>
 
         <Route path="/account/activate/:token">

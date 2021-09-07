@@ -5,18 +5,20 @@ import { useHistory } from "react-router-dom";
 
 const AdminUser = () => {
   const AdminStore = useSelector((state) => state.adminStore);
-  const userList = AdminStore?.userList?.filter((item) => item.type !== "admin");
+  const userList = AdminStore?.userList?.filter(
+    (item) => item.type !== "admin"
+  );
   const [user, setUser] = useState({});
 
   //pagination
   const [curentPage, setCurrentPage] = useState(1);
-  const [postPerPage] = useState(20);
+  const [postPerPage] = useState(2);
   const indexOfLastPost = curentPage * postPerPage;
   const indexOfFristPost = indexOfLastPost - postPerPage;
   const currentPost = userList.slice(indexOfFristPost, indexOfLastPost);
 
   let pageNumber = [];
-  for (let i = 1; i < Math.ceil(userList.length / postPerPage); i++) {
+  for (let i = 1; i <= Math.ceil(userList.length / postPerPage); i++) {
     pageNumber.push(i);
   }
 
@@ -80,7 +82,13 @@ const AdminUser = () => {
             </thead>
             <tbody>
               {currentPost.map((user, index) => (
-                <tr className="fw-600 text-white" key={user.email} onClick={() => history.push(`/admin/v7/user/upgrade/${user.email}`)}>
+                <tr
+                  className="fw-600 text-white"
+                  key={index}
+                  onClick={() =>
+                    history.push(`/admin/v7/user/upgrade/${user.email}`)
+                  }
+                >
                   <td className="">{user.name}</td>
                   <td className="fw-600">{user.email}</td>
                   <td>{user.type}</td>
@@ -90,29 +98,31 @@ const AdminUser = () => {
           </Table>
         </div>
       ) : null}
-      <div className=" pb-3 pt-3">
-        <nav>
-          <ul className="pagination flex-wrap d-flex justify-content-center">
-            {pageNumber.map((number) => (
-              <li
-                key={number}
-                className={`page-item cursor-pointer ${
-                  number == curentPage ? "bg-danger" : ""
-                } `}
-              >
-                <a
-                  onClick={() => setCurrentPage(number)}
-                  className={`page-link ${
+      {userList.length > postPerPage ? (
+        <div className=" pb-3 pt-3">
+          <nav>
+            <ul className="pagination flex-wrap d-flex justify-content-center">
+              {pageNumber.map((number) => (
+                <li
+                  key={number}
+                  className={`page-item cursor-pointer ${
                     number == curentPage ? "bg-danger" : ""
                   } `}
                 >
-                  {number}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
+                  <a
+                    onClick={() => setCurrentPage(number)}
+                    className={`page-link ${
+                      number == curentPage ? "bg-danger" : ""
+                    } `}
+                  >
+                    {number}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+      ) : null}
     </div>
   );
 };

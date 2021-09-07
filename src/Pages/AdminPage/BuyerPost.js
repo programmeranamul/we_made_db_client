@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Button, Form, Alert, Modal, Table } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { buyerPost, deletBuyerPost, getAllBuyerPost } from "./../../Redux/Actions/PostAction";
-import { useDispatch , useSelector} from "react-redux";
+import {
+  buyerPost,
+  deletBuyerPost,
+  getAllBuyerPost,
+} from "./../../Redux/Actions/PostAction";
+import { useDispatch, useSelector } from "react-redux";
 
 const BuyerPost = () => {
   const {
@@ -34,13 +38,33 @@ const BuyerPost = () => {
     dispatch(deletBuyerPost(id));
   };
 
+  //pagination
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(20);
+
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = allBuyerPostStore?.postList?.slice(
+    indexOfFirstPost,
+    indexOfLastPost
+  );
+
+  const pageNumbers = [];
+  for (
+    let i = 1;
+    i <= Math.ceil(allBuyerPostStore?.postList?.length / postsPerPage);
+    i++
+  ) {
+    pageNumbers.push(i);
+  }
+
   return (
     <div>
       <div>
-      <button className="btn btn-danger me-3" onClick={handleShow}>
-        Add New Post
-      </button>
-      <button
+        <button className="btn btn-danger me-3" onClick={handleShow}>
+          Add New Post
+        </button>
+        <button
           className="btn btn-danger"
           onClick={() => dispatch(getAllBuyerPost())}
         >
@@ -54,7 +78,7 @@ const BuyerPost = () => {
         </Alert>
       ) : (
         <div className="pt-5">
-          {allBuyerPostStore?.postList.length > 0 ? (
+          {currentPosts.length > 0 ? (
             <Table striped bordered hover className="text-white">
               <thead>
                 <tr>
@@ -64,11 +88,11 @@ const BuyerPost = () => {
                 </tr>
               </thead>
               <tbody>
-                {allBuyerPostStore?.postList.map((post, index) => (
+                {currentPosts.map((post, index) => (
                   <tr
                     key={index}
                     className="cursor-pointer text-white"
-                   onClick={() => deletPost(post._id)}
+                    onClick={() => deletPost(post._id)}
                   >
                     <td>{post.location}</td>
                     <td>{post.size}</td>
@@ -77,7 +101,34 @@ const BuyerPost = () => {
                 ))}
               </tbody>
             </Table>
-          ) : <Alert variant={"danger"}>No Post Found!</Alert>}
+          ) : (
+            <Alert variant={"danger"}>No Post Found!</Alert>
+          )}
+          {allBuyerPostStore?.postList.length > postsPerPage ? (
+            <div className=" pb-3 pt-3">
+              <nav>
+                <ul className="pagination flex-wrap d-flex justify-content-center">
+                  {pageNumbers.map((number) => (
+                    <li
+                      key={number}
+                      className={`page-item cursor-pointer ${
+                        number === currentPage ? "active" : ""
+                      } `}
+                    >
+                      <a
+                        onClick={() => setCurrentPage(number)}
+                        className={`page-link ${
+                          number == currentPage ? "bg-danger" : ""
+                        }`}
+                      >
+                        {number}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            </div>
+          ) : null}
         </div>
       )}
 
@@ -106,6 +157,19 @@ const BuyerPost = () => {
                 type="text"
                 placeholder="size"
                 {...register("size", { required: true })}
+              />
+              {errors.size?.type === "required" && (
+                <span className="text-danger mt-2 d-block">
+                  This field is required
+                </span>
+              )}
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Price</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="price"
+                {...register("price", { required: true })}
               />
               {errors.size?.type === "required" && (
                 <span className="text-danger mt-2 d-block">
