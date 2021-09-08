@@ -72,7 +72,7 @@ const footerItems = [
       },
     ],
     social: [
-      { icon: faFacebook, link: "#" },
+      { icon: faFacebook, link: "https://web.facebook.com/Squarefeetbd.official" },
       { icon: faYoutube, link: "#" },
       { icon: faLinkedin, link: "#" },
       { icon: faInstagram, link: "#" },
@@ -112,7 +112,7 @@ const Footer = () => {
                     ))}
                     {footerItem.social &&
                       footerItem.social.map((item, index) => (
-                        <a href={item.link} className="social-icon" key={index}>
+                        <a href={item.link} target="_blank" rel="noreferrer" className="social-icon" key={index}>
                           <FontAwesomeIcon icon={item.icon} />
                         </a>
                       ))}

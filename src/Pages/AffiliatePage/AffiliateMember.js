@@ -8,21 +8,7 @@ const affiliateData = [
         referralNumber: "7921",
         affiliateImage: af1,
       },
-      {
-        name: "Azharul Islam",
-        referralNumber: "7921",
-        affiliateImage: af1,
-      },
-      {
-        name: "Azharul Islam",
-        referralNumber: "7921",
-        affiliateImage: af1,
-      },
-      {
-        name: "Azharul Islam",
-        referralNumber: "7921",
-        affiliateImage: af1,
-      },
+     
 ];
 
 const AffiliateMember = () => {

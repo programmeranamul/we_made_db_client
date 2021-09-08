@@ -60,7 +60,7 @@ const AfterBanner = () => {
     <div className="">
       <div className="broker-free pt-5">
         <div>
-          <img src={brokerFree} alt="" className="w-100" />
+          <img src="https://i.ibb.co/dftDscd/Absolutely.png" alt="" className="w-100" />
         </div>
       </div>
 

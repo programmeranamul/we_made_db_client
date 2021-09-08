@@ -1,8 +1,8 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
 import "./MembarShipPlan.css";
-import { Modal, Button } from 'react-bootstrap';
+import { Modal, Button } from "react-bootstrap";
 
 const MemberShipData = [
   {
@@ -57,7 +57,7 @@ const MemberShipPlan = () => {
     if (type === "Free") {
       return;
     } else {
-      handleShow()
+      handleShow();
     }
   };
   return (
@@ -112,22 +112,23 @@ const MemberShipPlan = () => {
               </div>
             ))}
           </div>
-          <p className="mt-4 bg-sky text-white p-2 text-center">
+        </div>
+      </div>
+      <Modal show={show} onHide={handleClose} size={"lg"}>
+        <Modal.Header closeButton>
+          <Modal.Title>Membership Plan</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p className=" p-2 ">
             <b>
               To pay your Membership fee through Bkash and Nagad (Send money )
               to <span> </span>
-              <span className="bg-sky text-white"> 01739992976</span>.<br />{" "}
+              <span className=" text-danger"> 01739992976</span>.<br />{" "}
               (Note: Please keep record of your transaction details and text
               your transaction number to Customer Support in live chat).
             </b>
           </p>
-        </div>
-      </div>
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
